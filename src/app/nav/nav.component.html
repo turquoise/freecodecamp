@@ -1,0 +1,82 @@
+
+
+      <nav id="nav-main"
+          class="navbar navbar-inverse navbar-fixed-top"
+          style="background-color: #37474f; ">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button"
+                  class="navbar-toggle collapsed"
+                  data-toggle="collapse"
+                  data-target="#bs-example-navbar-collapse-1"
+                  aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" routerLink="/home">FreeCodeCamp</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse"
+            id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li >
+              <a routerLink="/home"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true}"
+                class="toggle">
+                Home
+              </a>
+            </li>
+            <li >
+              <a routerLink="/tribute" routerLinkActive="active" class="toggle" >
+                Tribute
+              </a>
+            </li>
+            <li >
+              <a routerLink="/quote" routerLinkActive="active" class="toggle">
+                Quote
+              </a>
+            </li>
+            <li>
+              <a routerLink="/weather" routerLinkActive="active" class="toggle">
+                Weather
+              </a>
+            </li>
+            <li >
+              <a routerLink="/wiki" routerLinkActive="active" class="toggle">
+                Wiki
+              </a>
+            </li>
+            <li >
+              <a routerLink="/twitch" routerLinkActive="active" class="toggle">
+                Twitch
+              </a>
+            </li>
+            <li >
+              <a routerLink="/calculator" routerLinkActive="active" class="toggle">
+                Calculator
+              </a>
+            </li>
+            <li >
+              <a routerLink="/clock" routerLinkActive="active" class="toggle">
+                Clock
+              </a>
+            </li>
+            <li >
+              <a routerLink="/tic-tac-toe" routerLinkActive="active" class="toggle">
+                Tic Tac Toe
+              </a>
+            </li>
+            <li >
+              <a routerLink="/simon-says" routerLinkActive="active" class="toggle">
+                Simon Says
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
