@@ -47,9 +47,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    CollapseModule,
     NgbModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    CollapseModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]

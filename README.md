@@ -31,6 +31,13 @@ https://stackoverflow.com/questions/14203279/bootstrap-close-responsive-menu-on-
 
 
 bootstrap 4 responsive nav - https://stackoverflow.com/questions/42401606/how-to-hide-collapsible-bootstrap-4-navbar-on-click
+https://stackoverflow.com/questions/14203279/bootstrap-close-responsive-menu-on-click
+https://stackoverflow.com/questions/45254421/importing-bootstrap-4-to-angular-cli-app
+https://github.com/shakacode/bootstrap-loader/issues/311
+
+using bootstrap in angular cli - https://github.com/angular/angular-cli/wiki/stories-include-bootstrap
+
+ngx to solve collapse issues in bootstrap 4 - http://valor-software.com/ngx-bootstrap/#/collapse#usage
 
 ## Build
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -8,12 +9,20 @@ import * as $ from 'jquery';
 })
 export class NavbarComponent implements OnInit {
 
+  public isCollapsed: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
     console.log($(window));
-    
 
+  }
+  public collapsed(event: any): void {
+    console.log('collapsed event ', event);
+  }
+
+  public expanded(event: any): void {
+    console.log('expanded event ', event);
   }
 
 }

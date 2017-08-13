@@ -1,45 +1,61 @@
-<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-faded" style="background-color: #37474f;" >
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+<nav id="nav" class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-faded " style="background-color: #37474f;" >
+  <!--<button class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+  <button class="navbar-toggler navbar-toggler-right"
+          type="button"
+          (click)="isCollapsed = !isCollapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" routerLink="/home">FreeCodeCamp</a>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <a class="navbar-brand" routerLink="/home" routerLinkActive="active" >FreeCodeCamp</a>
+  <div class="collapse navbar-collapse"
+        id="navbarNavAltMarkup"
+        (collapsed)="collapsed($event)"
+        (expanded)="expanded($event)"
+        [collapse]="isCollapsed">
     <div class="navbar-nav">
       <a class="nav-item nav-link active"
           routerLink="/home"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true}"
-          data-toggle="collapse" data-target=".navbar-collapse.show">
+          (click)="isCollapsed = !isCollapsed">
         Home
         <span class="sr-only">(current)</span>
       </a>
-      <a class="nav-item nav-link" routerLink="/quote" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show">
+      <a class="nav-item nav-link" routerLink="/quote" routerLinkActive="active" (click)="isCollapsed = !isCollapsed">
         Quote
       </a>
-      <a class="nav-item nav-link" routerLink="/tribute" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show">
+      <a class="nav-item nav-link" routerLink="/tribute" routerLinkActive="active" (click)="isCollapsed = !isCollapsed" >
         Tribute
       </a>
-      <a class="nav-item nav-link" routerLink="/weather" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show">
+      <a class="nav-item nav-link" routerLink="/weather" routerLinkActive="active" (click)="isCollapsed = !isCollapsed" >
         Weather
       </a>
-      <a class="nav-item nav-link" routerLink="/twitch" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show">
+      <a class="nav-item nav-link" routerLink="/twitch" routerLinkActive="active" (click)="isCollapsed = !isCollapsed" >
         Twitch
       </a>
-      <a class="nav-item nav-link" routerLink="/wiki" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show">
+      <a class="nav-item nav-link" routerLink="/wiki" routerLinkActive="active" (click)="isCollapsed = !isCollapsed" >
         Wiki
       </a>
-      <a class="nav-item nav-link" routerLink="/calculator" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show">
+      <a class="nav-item nav-link" routerLink="/calculator" routerLinkActive="active" (click)="isCollapsed = !isCollapsed" >
         Calculator
       </a>
-      <a class="nav-item nav-link" routerLink="/clock" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show">
+      <a class="nav-item nav-link" routerLink="/clock" routerLinkActive="active" (click)="isCollapsed = !isCollapsed" >
         Clock
       </a>
-      <a class="nav-item nav-link" routerLink="/tic-tac-toe" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show">
+      <a class="nav-item nav-link" routerLink="/tic-tac-toe" routerLinkActive="active" (click)="isCollapsed = !isCollapsed" >
         Tic Tac Toe
       </a>
-      <a class="nav-item nav-link" routerLink="/simon-says" routerLinkActive="active" data-toggle="collapse" data-target=".navbar-collapse.show">
+      <a class="nav-item nav-link" routerLink="/simon-says" routerLinkActive="active" (click)="isCollapsed = !isCollapsed" >
         Simon Says
       </a>
     </div>
   </div>
 </nav>
+<hr>
