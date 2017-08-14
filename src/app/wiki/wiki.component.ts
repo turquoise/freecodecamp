@@ -10,24 +10,21 @@ import { Observable } from 'rxjs/Observable';
 })
 export class WikiComponent implements OnInit {
 
-  term = 'London';
-  items: Observable<Array<string>>;
+  items: Observable<string[]>;
+  userSearch = 'London';
 
-  constructor(private wikiService: WikiService) {
-    this.items = wikiService.getWiki(this.term);
-
-
-
-  }
+  constructor(private wikiService: WikiService) {}
 
   // https://www.mediawiki.org/wiki/API:Main_page
+  // https://blog.thoughtram.io/angular/2016/01/06/taking-advantage-of-observables-in-angular2.html
 
   ngOnInit() {
-
-
+    this.search(this.userSearch);
   }
-
-
+  search(term: string) {
+    this.items = this.wikiService.search(term);
+    console.log('wiki this.items ', this.items);
+  }
 
 
 

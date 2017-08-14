@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TributeService } from './tribute.service';
+import { Artist } from './Artist';
 
 @Component({
   selector: 'app-tribute',
@@ -9,14 +10,20 @@ import { TributeService } from './tribute.service';
 })
 export class TributeComponent implements OnInit {
 
-  album: any = 'queen';
-
-
+  searchStr: string;
+  searchRes: Artist[];
 
   constructor(private tributeService: TributeService) { }
 
   ngOnInit() {
 
+  }
+
+  searchMusic() {
+    this.tributeService.searchMusic(this.searchStr)
+      .subscribe(res => {
+        this.searchRes = res.artists.items;
+      });
   }
 
   getTributeAlbums() {

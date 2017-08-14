@@ -1,42 +1,26 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Jsonp, URLSearchParams } from '@angular/http';
+import { Jsonp, URLSearchParams } from '@angular/http';
 
 @Injectable()
 export class WikiService {
 
+  // https://no-shadow-angular-io.firebaseapp.com/docs/ts/latest/guide/server-communication.html#!#cors
 
-
-  constructor(
-    private http: Http,
-    private jsonp: Jsonp
-  ) { }
-
-
+  constructor(private jsonp: Jsonp) { }
 
   search(term: string) {
-    let search = new URLSearchParams()
-    search.set('action', 'opensearch');
-    search.set('search', term);
-    search.set('format', 'json');
-    return this.jsonp
-                .get('http://en.wikipedia.org/w/api.php?callback=JSONP_CALLBACK', { search })
-                .map((request) => request.json()[1]);
+    let wikiurl = 'http://en.wikipedia.org/w/api.php';
+    let api = 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=';
+    let params = new URLSearchParams();
+    params.set('search', term); // user's search value.
+    params.set('action', 'opensearch');
+    params.set('format', 'json');
+    params.set('callback', 'JSONP_CALLBACK');
+
+    return this.jsonp.get(api, { search: params})
+        .map(request => request.json()[1]);
+
   }
-
-getWiki(term: string) {
-  let wikiUrl = 'http://en.wikipdia.org/w/api.php';
-  let params = new URLSearchParams();
-  params.set('search', term);
-  params.set('action', 'opensearch');
-  params.set('format', 'json');
-  params.set('callback', 'JSONP_CALLBACK');
-
-  return this.jsonp.get(wikiUrl, { search: params})
-      .map(res => <string[]> res.json()[1]);
-
-
-
-}
 
 
 }
