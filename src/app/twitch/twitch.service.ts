@@ -1,5 +1,8 @@
-// https://dev.twitch.tv/
+import { Injectable } from '@angular/core';
 
-// https://dev.twitch.tv/docs/v5/guides/embed
+@Injectable()
+export class TwitchService {
 
-// https://dev.twitch.tv/docs/v5/guides/using-the-twitch-api/
+  constructor() { }
+
+}

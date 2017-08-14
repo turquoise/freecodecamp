@@ -1,3 +1,6 @@
 <div class="container top">
   <h1>Wiki</h1>
+  <ul>
+    <li *ngFor="let item of items">{{ item | async}}</li>
+  </ul>
 </div>

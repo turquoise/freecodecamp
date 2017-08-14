@@ -20,11 +20,11 @@ export class TributeComponent implements OnInit {
   }
 
   getTributeAlbums() {
-    this.tributeService.getSpotifyApi()
-      .subscribe( result => {
-        console.log('tribute result ', result);
-        this.album = result;
-      });
+    // this.tributeService.getSpotifyApi()
+    //   .subscribe( result => {
+    //     console.log('tribute result ', result);
+    //     this.album = result;
+    //   });
   }
 
 }
