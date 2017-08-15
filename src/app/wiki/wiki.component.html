@@ -1,5 +1,10 @@
 <div class="container top">
-  <h1>Wikipedia Demo</h1>
+  <h2>Wikipedia Demo</h2>
+  <button class="btn btn-default">
+    <a href="{{ randomWikiUrl}}" target="_blank">
+      Click here for a random article
+    </a>
+  </button>
     <p><i>Fetches after each keystroke</i></p>
     <input #term (keyup)="search(term.value)"/>
     <!-- <div *ngFor="let item of items"> -->

@@ -21,6 +21,7 @@ export class WikiComponent implements OnInit {
   wikiSummary = [];
   wikiUrl = [];
   wikiData = [];
+  randomWikiUrl = 'https://en.wikipedia.org/wiki/Special:Random';
 
 
   constructor(private wikiService: WikiService) {}
@@ -61,6 +62,8 @@ export class WikiComponent implements OnInit {
     }
 } );
   }
+
+  
 
   search(searchTerm) {
     //this.items = this.wikiService.search(searchTerm);
