@@ -10,6 +10,8 @@ import { WeatherService } from './weather.service';
 export class WeatherComponent implements OnInit {
 
   cityWeather;
+  // from kelvin to celcius subtract 273
+
 
   constructor(private weatherService: WeatherService) { }
 
@@ -24,7 +26,6 @@ export class WeatherComponent implements OnInit {
       .subscribe( result => {
         console.log('London weather', result);
         this.cityWeather = result;
-
       });
 
   }

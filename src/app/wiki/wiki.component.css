@@ -1,0 +1,15 @@
+.card {
+  width: 100%;
+}
+
+.summary {
+  height: 150px;
+}
+
+.url {
+  height: 150px;
+}
+
+li {
+  list-style-type: none;
+}

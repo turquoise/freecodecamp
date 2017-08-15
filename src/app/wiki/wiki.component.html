@@ -2,9 +2,35 @@
   <h1>Wikipedia Demo</h1>
     <p><i>Fetches after each keystroke</i></p>
     <input #term (keyup)="search(term.value)"/>
-    <ul>
-      <li *ngFor="let item of items | async">
-        {{item}} -
+    <!-- <div *ngFor="let item of items"> -->
+    <div class="row">
+      <div class="col ">
+        <ul >
+          <li class="card summary"  *ngFor="let sum of summary">{{ sum }}</li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul >
+          <li class="card url" *ngFor="let u of url">
+            <a href="{{ u }}" target="_blank">
+            {{ u }}
+          </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+
+    <!--<ul *ngFor="let sum of summary">
+      <li class="card" *ngFor="let u of url" >
+        {{ sum }} - <a href="{{ u }}" target="_blank">{{ u }}</a>
       </li>
-    </ul>
+    </ul> -->
+
+
+    <hr>
 </div>
