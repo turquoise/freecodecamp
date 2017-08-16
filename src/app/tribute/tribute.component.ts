@@ -16,9 +16,14 @@ export class TributeComponent implements OnInit {
   constructor(private tributeService: TributeService) { }
 
   ngOnInit() {
-
+    this.getGoogleBooks();
   }
 
-  
+  getGoogleBooks() {
+    this.tributeService.getGoogleBooks()
+      .subscribe( res => console.log('tribute res ', res));
+  }
+
+
 
 }

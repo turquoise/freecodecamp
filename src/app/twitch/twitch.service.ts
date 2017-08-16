@@ -1,44 +1,57 @@
 import { Injectable } from '@angular/core';
-import { Jsonp, URLSearchParams } from '@angular/http';
+import { Http, Response, Jsonp, URLSearchParams, Headers, RequestOptionsArgs, Request, RequestMethod } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { Stream } from './stream.model';
 
 @Injectable()
-export class TwitchService {
+export class TwitchService  {
 
   private data = [];
-  channels = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
-  twitch_url = `https://api.twitch.tv/kraken/`;
-  apiBaseUrl = 'https://wind-bow.hyperdev.space/twitch-api/streams/';
-  channel_test_id = '44322889';
-  user = 'monstercat';
-  query = '?callback=JSONP_CALLBACK';
-
-  constructor(private jsonp: Jsonp) { }
-
-  // https://dev.twitch.tv/docs/v5/reference/streams/#get-stream-by-user
-  // https://stackoverflow.com/questions/40537285/calling-the-twitch-api-with-angular-2
-
-  client_id = 'b7g5stpwmz0u9e72f6a4myuvtawk7f';
-  //client_secret = 'w078dx82nuc4farpdxdsyxoo3t5ikb';
+  private content = [];
+  private userlist = ["freecodecamp"];
+  private url = 'https://api.twitch.tv/kraken/search/streams';
+  private channels = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
+  private client_id = 'b7g5stpwmz0u9e72f6a4myuvtawk7f';
+  private callback = '$callback=JSONP_CALLBACK';
+  options: RequestOptionsArgs;
+  private searchChannel = '';
 
 
+  apiBaseUrl: string = 'https://api.twitch.tv/kraken/users/';
+  user: string = 'ESL_SC2';
+  query: string = '?callback=JSONP_CALLBACK';
 
-  getTwitch(): Observable<string> {
-    //let twitch = `${this.twitch_url}?term=${term}&callback=JSONP_CALLBACK`;
-    //let twitch = `${this.twitch_url}streams/${this.channel_test_id}/${this.client_id}`;
-    //let twitch = `${this.apiBaseUrl}${this.user}?client_id=${this.client_id}`;
-    let twitch = 'https://api.twitch.tv/kraken/streams/Jonathan_x64?callback=JSONP_CALLBACK';
-    // let params = new URLSearchParams();
-    // params.set('search', term);
-
-    return this.jsonp.get(twitch)
-      .map( res => {
-        const data =  res.json();
-        console.log('twitch data ', data);
-        return data;
-      });
+  constructor(
+    private jsonp: Jsonp,
+    private http: Http
+  ) {
+    this.options = {
+      headers: new Headers({
+        "Client-ID": 'b7g5stpwmz0u9e72f6a4myuvtawk7f'
+      })
+    }
   }
+
+  // https://codepen.io/tubber/pen/mAKKmA
+  // https://stackoverflow.com/questions/40537285/calling-the-twitch-api-with-angular-2
+  //http://www.concretepage.com/angular-2/angular-2-http-get-parameters-headers-urlsearchparams-requestoptions-example
+
+  refresh(): Observable<string> {
+    for (let i = 0; i < this.channels.length; i++) {
+      this.searchChannel = this.channels[i];
+    }
+    return this.http.get(`https://api.twitch.tv/kraken/channels/${this.searchChannel}`, this.options )
+      .map( res => {
+        const data = res.json();
+        console.log('twitch service test items ', data);
+        return data;
+      })
+
+}
+
+
+  
 
 
 

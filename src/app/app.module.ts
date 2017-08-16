@@ -27,7 +27,6 @@ import { SimonSaysComponent } from './simon-says/simon-says.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
