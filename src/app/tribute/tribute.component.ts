@@ -19,19 +19,6 @@ export class TributeComponent implements OnInit {
 
   }
 
-  searchMusic() {
-    this.tributeService.searchMusic(this.searchStr)
-      .subscribe(res => {
-        this.searchRes = res.artists.items;
-      });
-  }
-
-  getTributeAlbums() {
-    // this.tributeService.getSpotifyApi()
-    //   .subscribe( result => {
-    //     console.log('tribute result ', result);
-    //     this.album = result;
-    //   });
-  }
+  
 
 }

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule, Jsonp, Response } from '@angular/http';
 
@@ -8,6 +9,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { CollapseModule } from 'ngx-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaterialModule, MdCardModule } from '@angular/material';
 
 
 import { AppComponent } from './app.component';
@@ -44,13 +46,16 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     JsonpModule,
     AppRoutingModule,
     NgbModule,
     FlexLayoutModule,
-    CollapseModule
+    CollapseModule,
+    MaterialModule,
+    MdCardModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]

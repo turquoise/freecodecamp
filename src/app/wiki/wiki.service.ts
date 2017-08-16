@@ -15,7 +15,7 @@ export class WikiService {
 
   search(term: string) {
     let wikiurl = 'http://en.wikipedia.org/w/api.php';
-    //let api = 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=';
+    // let api = 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=';
     //let api2 = 'https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json';
     let params = new URLSearchParams();
     params.set('search', term); // user's search value.
@@ -40,6 +40,7 @@ export class WikiService {
           console.log('wikiservice data ', data);
           return data;
         })
+        // I need to do a forEach loop over the results.
 
 
       }
