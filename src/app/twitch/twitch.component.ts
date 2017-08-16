@@ -30,7 +30,8 @@ export class TwitchComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getTwitch();
+    this.getTwitchChannels();
+    this.getTwitchStream();
     //this.checkTwitch();
     // $.ajax({
     //   type: 'GET',
@@ -54,9 +55,14 @@ export class TwitchComponent implements OnInit {
   //
   // }
 
-  getTwitch() {
-    this.twitchService.refresh()
+  getTwitchChannels() {
+    this.twitchService.getChannels()
       .subscribe( res => console.log('twitch component res ', res));
+  }
+
+  getTwitchStream() {
+    this.twitchService.getStream()
+      .subscribe( res => console.log('twitch data stream ', res));
   }
 
 

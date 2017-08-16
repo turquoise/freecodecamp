@@ -8,6 +8,7 @@ import { Stream } from './stream.model';
 export class TwitchService  {
 
   private data = [];
+  private dataStream = [];
   private content = [];
   private userlist = ["freecodecamp"];
   private url = 'https://api.twitch.tv/kraken/search/streams';
@@ -37,11 +38,11 @@ export class TwitchService  {
   // https://stackoverflow.com/questions/40537285/calling-the-twitch-api-with-angular-2
   //http://www.concretepage.com/angular-2/angular-2-http-get-parameters-headers-urlsearchparams-requestoptions-example
 
-  refresh(): Observable<string> {
+  getChannels(): Observable<string> {
     for (let i = 0; i < this.channels.length; i++) {
       this.searchChannel = this.channels[i];
     }
-    return this.http.get(`https://api.twitch.tv/kraken/channels/${this.searchChannel}`, this.options )
+    return this.http.get(`https://api.twitch.tv/kraken/channels/${this.userlist[0]}`, this.options )
       .map( res => {
         const data = res.json();
         console.log('twitch service test items ', data);
@@ -50,8 +51,17 @@ export class TwitchService  {
 
 }
 
+getStream() {
+  return this.http.get(`https://api.twitch.tv/kraken/streams/StreamerHouse`, this.options)
+    .map(res => {
+      const dataStream = res.json();
+      console.log('dataStream ', dataStream);
+      return dataStream;
+    })
+}
 
-  
+
+
 
 
 
