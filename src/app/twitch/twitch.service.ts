@@ -41,52 +41,36 @@ export class TwitchService  {
   //http://www.concretepage.com/angular-2/angular-2-http-get-parameters-headers-urlsearchparams-requestoptions-example
   // https://github.com/Lakston/angular-twitch-viewer/tree/master/src
 
-  getChannels(): Observable<string> {
+  getChannel(item): Observable<string> {
 
-    return this.http.get(`https://api.twitch.tv/kraken/channels/freecodecamp`, this.options )
+    return this.http.get(`https://api.twitch.tv/kraken/channels/${item.name}`, this.options )
       .map( res => {
         const data = res.json();
-        console.log('twitch service test items ', data);
+        //console.log('twitch service test items ', data);
         return data;
       })
 
 }
 
 getStream(item) {
-  // null if the channel is not streaming.
-  // let streams = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
-  //
-  // streams.forEach( item => {
-  //   console.log('item ', item);
-  //   this.http.get(`https://api.twitch.tv/kraken/streams/${item}`, this.options)
-  //   .map(res => {
-  //     const dataStream = res.json();
-  //     console.log('dataStream ', dataStream);
-  //     return dataStream;
-  //   })
-  // })
 
   return this.http.get(`https://api.twitch.tv/kraken/streams/${item}`, this.options)
     .map(res => {
       const dataStream = res.json();
-      console.log('dataStream ', dataStream);
+      //console.log('dataStream ', dataStream);
       return dataStream;
     })
 
   }
 
-  getTwitchUser() {
-    return this.http.get('https://api.twitch.tv/kraken/users/freecodecamp?client_id=b7g5stpwmz0u9e72f6a4myuvtawk7f')
+  getTwitchUser(item) {
+    return this.http.get(`https://api.twitch.tv/kraken/users/${item}?client_id=b7g5stpwmz0u9e72f6a4myuvtawk7f`)
       .map( res => {
-        console.log('test ', res.json())
+        //console.log('test ', res.json())
         const test = res.json();
         return test;
       })
   }
-
-
-
-
 
 
 }

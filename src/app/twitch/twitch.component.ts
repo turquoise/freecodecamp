@@ -17,10 +17,18 @@ export class TwitchComponent implements OnInit {
   itemstest;
   dataStream;
   dataChannel;
+  dataUser;
+  user;
+  name;
+  nameOnline = [];
+  nameOffline = [];
+  listUsers = [];
   channel  = '';
   isStreaming: boolean;
+  isDeleted: boolean;
   freecodecamp = '';
   userStreaming = '';
+  checkOnline = '';
   channels = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
 
   constructor(
@@ -28,33 +36,27 @@ export class TwitchComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getTwitchChannels();
-    this.getTwitchUser();
-    //this.checkTwitch();
-    // $.ajax({
-    //   type: 'GET',
-    //   url: 'https://api.twitch.tv/kraken/channels/twitch',
-    //   headers: {
-    //     'Client-ID': 'b7g5stpwmz0u9e72f6a4myuvtawk7f'
-    //   },
-    //   success: function(data) {
-    //     console.log(data);
-    //   }
-    // });
+
+
     this.channels.forEach( item => {
-      console.log('item ', item);
       this.channel = item;
+      console.log('this.channel ', this.channel);
+      this.getTwitchUser(this.channel);
       this.getTwitchStream(this.channel);
+      this.getTwitchChannel(this.channel);
+
     })
+
 
   }
 
 
-  getTwitchChannels() {
-    this.twitchService.getChannels()
+  getTwitchChannel(item) {
+    this.twitchService.getChannel(item)
       .subscribe( result => {
         this.dataChannel = result;
-        console.log('twitch component channel ', this.dataChannel);
+        //console.log('this.dataChannel ', this.dataChannel);
+        // user, name, status, and game
       });
   }
 
@@ -63,29 +65,46 @@ export class TwitchComponent implements OnInit {
       .subscribe( res => {
         this.dataStream = res;
         console.log('twitch data stream ', this.dataStream);
+        let name = this.dataStream._links.self.slice(37);
+
         //console.log('this.dataStream.stream ', this.dataStream.stream );
         if (this.dataStream.stream !== null) {
           this.isStreaming = true;
-          this.userStreaming = 'online';
-          //console.log('online');
-          if (this.channel === item) {
+          console.log('this.name is online', name);
+          this.nameOnline.push(name);
+          this.listUsers.push(name + ' SUCCESS');
+          console.log('this.nameOnline ', this.nameOnline)
+
+          if (this.dataStream === 'freecodecamp') {
             this.freecodecamp = 'online';
-          } else {
-            this.freecodecamp = 'offline';
           }
+
         } else {
           this.isStreaming = false;
-          this.userStreaming = 'offline';
+          console.log('name is offline ',name);
+          this.nameOffline.push(name);
+          this.listUsers.push(name + ' NULL');
+          console.log('this.nameOffline ', this.nameOffline);
+          //this.userStreaming = 'offline';
+          this.freecodecamp = 'offline';
           //console.log('offline');
+          this.checkOnline = 'offline';
         }
+        if (this.dataStream === undefined) {
+          this.isDeleted = true;
+        }
+        console.log('this.listUsers ', this.listUsers);
+        //console.log('this.freecodecamp ', this.freecodecamp);
+
       });
   }
 
-  getTwitchUser() {
-    this.twitchService.getTwitchUser()
+  getTwitchUser(item) {
+    this.twitchService.getTwitchUser(item)
       .subscribe( result => {
-        this.itemstest = result;
-        console.log('twitch component test result ', this.itemstest);
+        this.dataUser = result;
+        this.user = this.dataUser.display_name;
+        console.log('this.user ', this.user);
       });
   }
 

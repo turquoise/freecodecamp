@@ -7,7 +7,7 @@
     <div class='block text-center'>
       <h1>Twitch TV JSON API</h1>
       <a href='https://www.twitch.tv/freecodecamp' target='blank'>
-        <h3 >freeCodeCamp:
+        <h3 >freeCodeCamp is
           <span  >{{ freecodecamp }}</span>
         </h3>
       </a>
@@ -19,9 +19,25 @@
       <div class='row'>
         <div class='col-md-4' id='user'>
           User:<br>
+          <ul>
+            <li *ngFor="let list of listUsers">{{ list }}</li>
+          </ul>
+          <ul>
+            <li *ngFor="let online of nameOnline">
+              <a href="#" target="_blank">
+              {{ online }} is online
+            </a>
+            </li>
+          </ul>
+          <ul>
+            <li *ngFor="let offline of nameOffline">
+              {{ offline }} is offline
+            </li>
+          </ul>
         </div>
         <div class='col-md-4' id='status'>
           Status:<br>
+
         </div>
         <div class='col-md-4' id='game'>
           Game:<br>
