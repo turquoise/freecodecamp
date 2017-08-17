@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TwitchService } from './twitch.service';
 import { Observable } from 'rxjs/Observable';
-import { Request, Headers, RequestOptionsArgs } from '@angular/http';
+
 import * as $ from 'jquery';
 
 @Component({
@@ -12,24 +12,25 @@ import * as $ from 'jquery';
 })
 export class TwitchComponent implements OnInit {
 
+
+
+
   items;
+  itemstest;
   channel = 'freecodecamp';
-  //options: RequestOptionsArgs;
+
 
   constructor(
     private twitchService: TwitchService,
   ) {
-    // this.options = {
-    //   headers: new Headers({
-    //     "Client-ID": 'b7g5stpwmz0u9e72f6a4myuvtawk7f'
-    //   })
-    // }
+
   }
 
 
   ngOnInit() {
     this.getTwitchChannels();
     this.getTwitchStream();
+    this.getTwitchUser();
     //this.checkTwitch();
     // $.ajax({
     //   type: 'GET',
@@ -65,12 +66,12 @@ export class TwitchComponent implements OnInit {
 
 
 
-  // getTwitch() {
-  //   this.twitchService.refresh()
-  //     .subscribe( result => {
-  //       this.items = result;
-  //       console.log('twitch component result ', result);
-  //     });
-  // }
+  getTwitchUser() {
+    this.twitchService.getTwitchUser()
+      .subscribe( result => {
+        this.itemstest = result;
+        console.log('twitch component test result ', this.itemstest);
+      });
+  }
 
 }

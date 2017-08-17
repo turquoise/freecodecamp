@@ -8,6 +8,7 @@ import { Stream } from './stream.model';
 export class TwitchService  {
 
   private data = [];
+  private test = [];
   private dataStream = [];
   private content = [];
   private userlist = ["freecodecamp"];
@@ -59,6 +60,15 @@ getStream() {
       console.log('dataStream ', dataStream);
       return dataStream;
     })
+  }
+
+  getTwitchUser() {
+    return this.http.get('https://api.twitch.tv/kraken/users/freecodecamp?client_id=b7g5stpwmz0u9e72f6a4myuvtawk7f')
+      .map( res => {
+        console.log('test ', res.json())
+        const test = res.json();
+        return test;
+      })
   }
 
 
