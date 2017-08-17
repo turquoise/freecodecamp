@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TwitchService } from './twitch.service';
 import { Observable } from 'rxjs/Observable';
-import { Http, Jsonp, Request, Headers, RequestOptionsArgs } from '@angular/http';
+import { Request, Headers, RequestOptionsArgs } from '@angular/http';
 import * as $ from 'jquery';
 
 @Component({
@@ -18,8 +18,6 @@ export class TwitchComponent implements OnInit {
 
   constructor(
     private twitchService: TwitchService,
-    //private http: Http,
-    //private jsonp: Jsonp
   ) {
     // this.options = {
     //   headers: new Headers({

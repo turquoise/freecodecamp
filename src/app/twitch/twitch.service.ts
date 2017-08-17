@@ -52,13 +52,14 @@ export class TwitchService  {
 }
 
 getStream() {
-  return this.http.get(`https://api.twitch.tv/kraken/streams/StreamerHouse`, this.options)
+  // null if the channel is not streaming.
+  return this.http.get(`https://api.twitch.tv/kraken/streams/freecodecamp`, this.options)
     .map(res => {
       const dataStream = res.json();
       console.log('dataStream ', dataStream);
       return dataStream;
     })
-}
+  }
 
 
 
