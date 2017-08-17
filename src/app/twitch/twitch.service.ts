@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Jsonp, URLSearchParams, Headers, RequestOptionsArgs, Request, RequestMethod } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import { Stream } from './stream.model';
 
 @Injectable()
 export class TwitchService  {
@@ -10,6 +9,8 @@ export class TwitchService  {
   private data = [];
   private test = [];
   private dataStream = [];
+  private streamUrl;
+
   private content = [];
   private userlist = ["freecodecamp"];
   private url = 'https://api.twitch.tv/kraken/search/streams';
@@ -38,12 +39,11 @@ export class TwitchService  {
   // https://codepen.io/tubber/pen/mAKKmA
   // https://stackoverflow.com/questions/40537285/calling-the-twitch-api-with-angular-2
   //http://www.concretepage.com/angular-2/angular-2-http-get-parameters-headers-urlsearchparams-requestoptions-example
+  // https://github.com/Lakston/angular-twitch-viewer/tree/master/src
 
   getChannels(): Observable<string> {
-    for (let i = 0; i < this.channels.length; i++) {
-      this.searchChannel = this.channels[i];
-    }
-    return this.http.get(`https://api.twitch.tv/kraken/channels/${this.userlist[0]}`, this.options )
+
+    return this.http.get(`https://api.twitch.tv/kraken/channels/freecodecamp`, this.options )
       .map( res => {
         const data = res.json();
         console.log('twitch service test items ', data);
@@ -52,14 +52,27 @@ export class TwitchService  {
 
 }
 
-getStream() {
+getStream(item) {
   // null if the channel is not streaming.
-  return this.http.get(`https://api.twitch.tv/kraken/streams/freecodecamp`, this.options)
+  // let streams = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
+  //
+  // streams.forEach( item => {
+  //   console.log('item ', item);
+  //   this.http.get(`https://api.twitch.tv/kraken/streams/${item}`, this.options)
+  //   .map(res => {
+  //     const dataStream = res.json();
+  //     console.log('dataStream ', dataStream);
+  //     return dataStream;
+  //   })
+  // })
+
+  return this.http.get(`https://api.twitch.tv/kraken/streams/${item}`, this.options)
     .map(res => {
       const dataStream = res.json();
       console.log('dataStream ', dataStream);
       return dataStream;
     })
+
   }
 
   getTwitchUser() {

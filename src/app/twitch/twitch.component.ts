@@ -13,23 +13,22 @@ import * as $ from 'jquery';
 export class TwitchComponent implements OnInit {
 
 
-
-
   items;
   itemstest;
-  channel = 'freecodecamp';
-
+  dataStream;
+  dataChannel;
+  channel  = '';
+  isStreaming: boolean;
+  freecodecamp = '';
+  userStreaming = '';
+  channels = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
 
   constructor(
     private twitchService: TwitchService,
-  ) {
-
-  }
-
+  ) {}
 
   ngOnInit() {
     this.getTwitchChannels();
-    this.getTwitchStream();
     this.getTwitchUser();
     //this.checkTwitch();
     // $.ajax({
@@ -42,29 +41,45 @@ export class TwitchComponent implements OnInit {
     //     console.log(data);
     //   }
     // });
+    this.channels.forEach( item => {
+      console.log('item ', item);
+      this.channel = item;
+      this.getTwitchStream(this.channel);
+    })
 
   }
 
-  // checkTwitch() {
-  //   return this.http.get('https://api.twitch.tv/kraken/channels/twitch', this.options )
-  //     .subscribe( res => {
-  //       this.items = res.json();
-  //       console.log('test items ', this.items);
-  //     })
-  //
-  // }
 
   getTwitchChannels() {
     this.twitchService.getChannels()
-      .subscribe( res => console.log('twitch component res ', res));
+      .subscribe( result => {
+        this.dataChannel = result;
+        console.log('twitch component channel ', this.dataChannel);
+      });
   }
 
-  getTwitchStream() {
-    this.twitchService.getStream()
-      .subscribe( res => console.log('twitch data stream ', res));
+  getTwitchStream(item) {
+    this.twitchService.getStream(item)
+      .subscribe( res => {
+        this.dataStream = res;
+        console.log('twitch data stream ', this.dataStream);
+        //console.log('this.dataStream.stream ', this.dataStream.stream );
+        if (this.dataStream.stream !== null) {
+          this.isStreaming = true;
+          this.userStreaming = 'online';
+          //console.log('online');
+          if (this.channel === item) {
+            this.freecodecamp = 'online';
+          } else {
+            this.freecodecamp = 'offline';
+          }
+        } else {
+          this.isStreaming = false;
+          this.userStreaming = 'offline';
+          //console.log('offline');
+        }
+      });
   }
-
-
 
   getTwitchUser() {
     this.twitchService.getTwitchUser()
