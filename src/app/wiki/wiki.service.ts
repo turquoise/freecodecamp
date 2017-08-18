@@ -16,8 +16,7 @@ export class WikiService {
 
   search(term: string) {
     let wikiurl = 'http://en.wikipedia.org/w/api.php';
-    // let api = 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=';
-    //let api2 = 'https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json';
+
     let params = new URLSearchParams();
     params.set('search', term); // user's search value.
     params.set('action', 'opensearch');
@@ -34,16 +33,7 @@ export class WikiService {
           const dataHeading = result.json()[2];
           const dataUrl = result.json()[3];
 
-          // this.wikiList = dataTitle.map( (x, i) => {
-          //   return {
-          //     title: x,
-          //     heading: dataHeading[i],
-          //     url: dataUrl[i]
-          //   }
-          // })
-          //console.log('this.wikiList ', this.wikiList);
           //console.log('wikiservice data ', data);
-          //return data;
           return data;
         });
 

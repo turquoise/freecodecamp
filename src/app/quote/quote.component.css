@@ -1,0 +1,30 @@
+.container-fluid {
+  background-image: url('https://img13.deviantart.net/a915/i/2009/146/f/b/exquisite_gold_frame_texture_by_pareeerica.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: white;
+  height: 800px;
+}
+
+.block {
+    /*background-color: #7c5827;*/
+    background-color: #b39971;
+    opacity: .9;
+    color: #ecddc5;
+    padding: 50px;
+    width:50%;
+    margin-right:auto;
+    margin-left:auto;
+    border-radius: 30px;
+    font-size: 1.5em;
+    padding-bottom:2%;
+}
+
+.spacer {
+  height: 18%;
+}
+
+button {
+  background-color: #98743a;
+  color: #ecddc5;
+}

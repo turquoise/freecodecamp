@@ -1,22 +1,26 @@
-<div class="container-fluid top">
-  <div
+<div class="container-fluid top text-center">
+  <!--<div
           style="font-style: italic"
           [style.xs]="{'font-size.px': 10, color: 'blue'}"
           [style.sm]="{'font-size.px': 20, color: 'lightblue'}"
           [style.md]="{'font-size.px': 30, color: 'orange'}"
           [style.lg]="styleLgExp">
       Quote
-  </div>
+  </div> -->
+  <div class="spacer" ></div>
+  <div class="block">
+  <h1>Random Quote Generator</h1>
+  <!--<p>
+    <em>{{quote.line}}</em> - {{quote.author}}
+  </p> -->
+  <h2>{{ randomQuote?.author  }}</h2>
+  <hr>
+  <h3>{{ randomQuote?.quote  }}</h3>
+  <hr>
+  <button class="btn btn-default" (click)="onClick()">Random Quote</button>
+  <!-- <form>
+    <label>Search for a quote</label>
+    <input type="text" class="form-control">
+  </form> -->
 </div>
-<!--<p>
-  <em>{{quote.line}}</em> - {{quote.author}}
-</p> -->
-<h2>{{ randomQuote?.author  }}</h2>
-<hr>
-<h3>{{ randomQuote?.quote  }}</h3>
-<hr>
-<button class="btn btn-default" (click)="onClick()">Random Quote</button>
-<!-- <form>
-  <label>Search for a quote</label>
-  <input type="text" class="form-control">
-</form> -->
+</div>

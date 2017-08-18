@@ -45,7 +45,13 @@
         <div class='col-md-4' id='game'>
           Game:<br>
           <ul>
-            <li *ngFor="let list of twitchList">{{ list.game }}</li>
+            <li *ngFor="let list of twitchList">
+              <a href="{{list.status === 'is ONLINE' ? list.url : '' }}"
+                [ngClass]="list.status === 'is ONLINE' ? 'online' : 'offline' "
+                target="_blank">
+                {{ list.game}}
+              </a>
+            </li>
           </ul>
         </div>
       </div>

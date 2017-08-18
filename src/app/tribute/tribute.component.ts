@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TributeService } from './tribute.service';
-import { Artist } from './Artist';
 
 @Component({
   selector: 'app-tribute',
@@ -11,7 +10,7 @@ import { Artist } from './Artist';
 export class TributeComponent implements OnInit {
 
   searchStr: string;
-  searchRes: Artist[];
+
 
   constructor(private tributeService: TributeService) { }
 

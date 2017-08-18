@@ -21,7 +21,7 @@ a{
     opacity: .7;
     color: white;
     padding: 50px;
-    width: 75%;
+    width: 90%;
     margin-right: auto;
     margin-left: auto;
     border-radius: 15px;
@@ -33,7 +33,7 @@ a{
     padding: 3%;
   }
 
-  
+
 
   li {
     list-style-type: none;

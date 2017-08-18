@@ -1,5 +1,41 @@
-
 .container-fluid {
-  background-color: #bbdefb;
+  background-image: url('http://images.all-free-download.com/images/graphiclarge/hd_sky_picture_05_hd_pictures_166299.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #b2bac5;
   height: 800px;
+}
+
+.block{
+    background-color:black;
+    opacity:.75;
+    color:white;
+    padding: 50px;
+    width:50%;
+    margin-right:auto;
+    margin-left:auto;
+    border-radius:15px;
+    font-size:1.5em;
+    padding-bottom:2%;
+}
+
+i {
+  font-size: 40px;
+}
+
+li {
+  list-style-type: none;
+}
+
+
+.sunny {
+
+}
+
+.cloudy {
+
+}
+
+.rainy {
+
 }
