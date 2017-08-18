@@ -21,3 +21,27 @@
 li {
   list-style-type: none;
 }
+
+
+  .block {
+      background-color: black;
+      opacity: .8;
+      color: white;
+      padding: 50px;
+      width: 75%;
+      margin-right: auto;
+      margin-left: auto;
+      border-radius: 15px;
+      font-size: 1.5em;
+      padding-bottom: 2%;
+    }
+
+    .spacer {
+      padding: 4%;
+    }
+
+
+
+    a {
+      color: white;
+    }

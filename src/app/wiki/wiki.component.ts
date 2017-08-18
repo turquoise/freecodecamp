@@ -12,8 +12,10 @@ import * as $ from 'jquery';
 export class WikiComponent implements OnInit {
 
   items: Observable<string[]>;
-  summary: Observable<string[]>;
-  url: Observable<string[]>;
+
+  heading;
+  wikiList =[];
+  item = [];
   userSearch = 'London';
   wikiURL = "https://en.wikipedia.org/w/api.php";
   wikiSearchTitle = [];
@@ -30,60 +32,43 @@ export class WikiComponent implements OnInit {
 
   ngOnInit() {
     this.search(this.userSearch);
-    this.jqueryTest();
+
+
 
   }
 
   jqueryTest() {
     this.wikiURL += '?' + $.param({
-    'action' : 'opensearch',
-    'search' :  this.userSearch,
-    'prop'  : 'revisions',
-    'rvprop' : 'content',
-    'format' : 'json',
-    'limit' : 10
-});
-
- $.ajax( {
-    url: this.wikiURL,
-    dataType: 'jsonp',
-    success: function(data) {
-       //console.log('jquery data' ,data);
-       //this.wikiSearchTitle = data[0];
-       //this.wikiUrl = data[3];
-       //this.wikiHeading = data[1];
-       //this.wikiSummary = data[2];
-       this.wikiData = data;
-       //console.log('this.wikiSearchTitle ', this.wikiSearchTitle);
-       //console.log('this.wikiHeading ', this.wikiHeading);
-       //console.log('this.wikiSummary ', this.wikiSummary);
-       //console.log('this.wikiUrl ', this.wikiUrl);
-       console.log('this.wikiData ', this.wikiData);
-    }
-} );
+      'action' : 'opensearch',
+      'search' :  this.userSearch,
+      'prop'  : 'revisions',
+      'rvprop' : 'content',
+      'format' : 'json',
+      'limit' : 10
+    });
   }
-
-  
 
   search(searchTerm) {
     //this.items = this.wikiService.search(searchTerm);
     this.wikiService.search(searchTerm)
       .subscribe( result => {
-        console.log('wiki component result ', result);
-
-        this.summary = result[2];
-        this.url = result[3];
+        console.log('result ', result);
         this.items = result;
-
-        console.log('this.summary ', this.summary);
-        console.log('this.url ', this.url);
-        console.log('this.items ', this.items);
-
+        const dataTitle = this.items[1];
+        const dataHeading = this.items[2];
+        const dataUrl = this.items[3];
+        //console.log('this.items ', this.items[1][0], this.items[2][0], this.items[3][0] );
+        //console.log('this.items ', this.items[1][1], this.items[2][1], this.items[3][1] );
+        this.wikiList = dataTitle.map( (x, i) => {
+          return {
+            title: x,
+            heading: dataHeading[i],
+            url: dataUrl[i]
+          }
+        })
+        console.log('this.wikiList ', this.wikiList);
       });
-
-
-
-  }
+    }
 
 
 }

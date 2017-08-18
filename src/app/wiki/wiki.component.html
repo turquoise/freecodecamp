@@ -1,14 +1,37 @@
 <div class="container-fluid top">
-  <h2>Wikipedia Demo</h2>
-  <button class="btn btn-default">
-    <a href="{{ randomWikiUrl}}" target="_blank">
-      Click here for a random article
-    </a>
-  </button>
-    <p><i>Fetches after each keystroke</i></p>
-    <input #term (keyup)="search(term.value)"/>
-    <!-- <div *ngFor="let item of items"> -->
-    <div class="row">
+
+
+  <div class="block text-center">
+    <h1>Wikipedia JSON API</h1>
+    <input #term  placeholder="Search Wikipedia">
+    <button class="btn btn-primary" (click)="search(term.value)">Submit</button>
+    <button class="btn btn-success">
+      <a href="{{ randomWikiUrl}}" target="_blank">
+        Random Wikipedia Article
+      </a>
+    </button>
+  </div>
+
+  <div class='spacer'></div>
+    <a name="page1"></a>
+    <div class='block'>
+      <h1 class='text-center'><span id='output'>Search Results</span></h1>
+      <!-- <ul>
+        <li *ngFor="let item of wikiList">
+          {{ item.title }} - {{ item.heading }} - {{ item.url }}
+        </li>
+      </ul> -->
+      <div *ngFor="let wiki of wikiList">
+        <a href="{{ wiki.url }}" target="_blank">
+          <h4>{{ wiki.title }}</h4>
+        </a>
+        <p>{{ wiki.heading }}</p>
+        <br>
+      </div>
+
+    </div>
+
+    <!--<div class="row">
       <div class="col ">
         <ul >
           <li class="card summary"  *ngFor="let sum of summary">{{ sum }}</li>
@@ -25,17 +48,10 @@
       </div>
     </div>
 
-
-
-
-
-
-    <!--<ul *ngFor="let sum of summary">
+    <ul *ngFor="let sum of summary">
       <li class="card" *ngFor="let u of url" >
         {{ sum }} - <a href="{{ u }}" target="_blank">{{ u }}</a>
       </li>
-    </ul> -->
+    </ul>
 
-
-    <hr>
-</div>
+</div> -->

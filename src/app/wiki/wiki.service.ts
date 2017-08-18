@@ -8,10 +8,11 @@ export class WikiService {
   private dataTitle = [];
   private dataHeading = [];
   private dataUrl = [];
+  private wikiList = [];
 
   constructor(private jsonp: Jsonp) {}
 
-  // https://codecraft.tv/courses/angular/http/jsonp-with-observables/
+  // https://stackoverflow.com/questions/38204053/javascript-map-2-arrays-into-1-object
 
   search(term: string) {
     let wikiurl = 'http://en.wikipedia.org/w/api.php';
@@ -26,21 +27,27 @@ export class WikiService {
     params.set('limit', '10' );
     params.set('callback', 'JSONP_CALLBACK');
 
-    // return this.jsonp.get(wikiurl, { search: params})
-    //     .map(
-    //       result => result = result.json()[1]
-    //     );
-
-    return this.jsonp.get(wikiurl, { search: params })
+    return this.jsonp.get(wikiurl, { search: params } )
         .map( (result) => {
           const data = result.json();
           const dataTitle = result.json()[1];
           const dataHeading = result.json()[2];
           const dataUrl = result.json()[3];
-          console.log('wikiservice data ', data);
+
+          // this.wikiList = dataTitle.map( (x, i) => {
+          //   return {
+          //     title: x,
+          //     heading: dataHeading[i],
+          //     url: dataUrl[i]
+          //   }
+          // })
+          //console.log('this.wikiList ', this.wikiList);
+          //console.log('wikiservice data ', data);
+          //return data;
           return data;
-        })
-        // I need to do a forEach loop over the results.
+        });
+
+
 
 
       }

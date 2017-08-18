@@ -12,10 +12,6 @@
   pointer-events: none;
 }
 
-
-
-
-
 a{
   color:white;
 }
@@ -37,13 +33,7 @@ a{
     padding: 3%;
   }
 
-  body {
-    background: url('https://cdn2.tnwcdn.com/wp-content/blogs.dir/1/files/2016/12/twitch-796x448.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+  
 
   li {
     list-style-type: none;
