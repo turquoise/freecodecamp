@@ -20,9 +20,10 @@ export class TwitchComponent implements OnInit {
   dataUser;
   user;
   name;
-  nameOnline = [];
-  nameOffline = [];
-  listUsers = [];
+  //nameOnline = [];
+  //nameOffline = [];
+  //listUsers = [];
+  twitchList = [];
   channel  = '';
   isStreaming: boolean;
   isDeleted: boolean;
@@ -66,34 +67,51 @@ export class TwitchComponent implements OnInit {
         this.dataStream = res;
         console.log('twitch data stream ', this.dataStream);
         let name = this.dataStream._links.self.slice(37);
-
+        let game = '';
+         let url = `https://www.twitch.tv/${name}`;
         //console.log('this.dataStream.stream ', this.dataStream.stream );
-        if (this.dataStream.stream !== null) {
+        if (this.dataStream.stream !== null ) {
+          game = this.dataStream.stream.game;
           this.isStreaming = true;
-          console.log('this.name is online', name);
-          this.nameOnline.push(name);
-          this.listUsers.push(name + ' SUCCESS');
-          console.log('this.nameOnline ', this.nameOnline)
-
+          //this.nameOnline.push(name);
+          //this.listUsers.push(name + ' SUCCESS');
+          this.twitchList.push({
+            user: name,
+            status: 'is ONLINE',
+            game: game,
+            url : url
+          })
+          //console.log('this.nameOnline ', this.nameOnline)
+          if (game !== null) {
+            console.log('game ', game);
+          }
           if (this.dataStream === 'freecodecamp') {
             this.freecodecamp = 'online';
           }
 
         } else {
           this.isStreaming = false;
-          console.log('name is offline ',name);
-          this.nameOffline.push(name);
-          this.listUsers.push(name + ' NULL');
-          console.log('this.nameOffline ', this.nameOffline);
+          //console.log('name is offline ',name);
+          //this.nameOffline.push(name);
+          //this.listUsers.push(name + ' NULL');
+          this.twitchList.push({
+            user: name,
+            status: 'is offline',
+            game: 'N/A',
+            url: 'offline'
+          })
+          //console.log('this.nameOffline ', this.nameOffline);
           //this.userStreaming = 'offline';
           this.freecodecamp = 'offline';
+          //console.log('game ', 'N/A');
           //console.log('offline');
           this.checkOnline = 'offline';
         }
+
         if (this.dataStream === undefined) {
           this.isDeleted = true;
         }
-        console.log('this.listUsers ', this.listUsers);
+        console.log('this.twitchList ', this.twitchList);
         //console.log('this.freecodecamp ', this.freecodecamp);
 
       });

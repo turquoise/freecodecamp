@@ -20,27 +20,35 @@
         <div class='col-md-4' id='user'>
           User:<br>
           <ul>
-            <li *ngFor="let list of listUsers">{{ list }}</li>
-          </ul>
-          <ul>
-            <li *ngFor="let online of nameOnline">
-              <a href="#" target="_blank">
-              {{ online }} is online
-            </a>
+            <li *ngFor="let list of twitchList">
+              <a href="{{list.status === 'is ONLINE' ? list.url : '' }}"
+                [ngClass]="list.status === 'is ONLINE' ? 'online' : 'offline' "
+                target="_blank">
+                {{ list.user}}
+              </a>
             </li>
           </ul>
-          <ul>
-            <li *ngFor="let offline of nameOffline">
-              {{ offline }} is offline
-            </li>
-          </ul>
+
+
         </div>
         <div class='col-md-4' id='status'>
           Status:<br>
+          <ul>
+            <li *ngFor="let list of twitchList">
+              <a href="{{list.status === 'is ONLINE' ? list.url : '' }}"
+                [ngClass]="list.status === 'is ONLINE' ? 'online' : 'offline' "
+                target="_blank">
+                {{ list.status}}
+              </a>
+            </li>
+          </ul>
 
         </div>
         <div class='col-md-4' id='game'>
           Game:<br>
+          <ul>
+            <li *ngFor="let list of twitchList">{{ list.game }}</li>
+          </ul>
         </div>
       </div>
     </div>

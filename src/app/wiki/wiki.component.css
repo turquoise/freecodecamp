@@ -1,3 +1,11 @@
+.container-fluid {
+  background-image: url('https://www.seoclerk.com/pics/475017-1i21Tl1472557761.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #fde8bb;
+  height: 900px;
+}
+
 .card {
   width: 100%;
 }
