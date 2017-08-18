@@ -10,17 +10,24 @@ import { TributeService } from './tribute.service';
 export class TributeComponent implements OnInit {
 
   searchStr: string;
+  imageUrl = 'https://commons.wikimedia.org/wiki/';
 
 
   constructor(private tributeService: TributeService) { }
 
   ngOnInit() {
     this.getGoogleBooks();
+    this.getWikiData();
   }
 
   getGoogleBooks() {
     this.tributeService.getGoogleBooks()
-      .subscribe( res => console.log('tribute res ', res));
+      .subscribe( res => console.log('google books res ', res));
+  }
+
+  getWikiData() {
+    this.tributeService.search()
+      .subscribe( res => console.log('wiki res ', res));
   }
 
 
