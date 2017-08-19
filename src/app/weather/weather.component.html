@@ -1,20 +1,29 @@
 <div class="container-fluid top">
-  <h1>Current Local Weather Openweather API</h1>
 
-  <h4>{{ cityWeather?.name }}</h4>
-  <p>Temperature {{ cityWeather?.main?.temp }} K</p>
-  <p>Celsius / Fahrenheit</p>
-  <div class="block text-center">
+
+  <div class="block text-center" >
+  <h1>Openweathermap JSON API</h1>
     <p>Current Local Weather</p>
     <ul>
-      <li><i class="fa fa-cloud"></i></li>
-      <li><i class="fa fa-sun-o"></i></li>
-      <li><i class="fa fa-tint"></i></li>
-      <li><i class="fa fa-bolt"></i></li>
-      <li>Country name:</li>
-      <li>City:</li>
-      <li>Latitude:</li>
-      <li>Longitude:</li>
+      <li>
+        <button class="btn btn-primary" (click)="onToggle()" >
+          Celsius / Fahrenheight
+        </button>
+      </li>
+      <li>
+        <img src="{{ iconUrl }}" >
+        {{ weatherData?.main?.temp }} F
+      </li>
+      <li>
+        <img src="{{ iconUrl }}" >
+        <div *ngIf="" >
+        </div>
+      </li>
+      <li>{{ weatherData?.weather[0]?.description }}</li>
+      <li>Country name: {{ country }}</li>
+      <li>City: {{ weatherData?.name }}</li>
+      <li>Latitude: {{ lat }}</li>
+      <li>Longitude: {{ long }}</li>
     </ul>
   </div>
 
