@@ -7,18 +7,19 @@
     <ul>
       <li>
         <button class="btn btn-primary" (click)="onToggle()" >
-          Celsius / Fahrenheight
+          <span>{{ celsius === false? 'Fahrenheight' : 'Celsius'}}</span>
         </button>
       </li>
-      <li>
+      <!--<li>
         <img src="{{ iconUrl }}" >
         {{ weatherData?.main?.temp }} F
-      </li>
-      <li>
+      </li> -->
+      <li >
         <img src="{{ iconUrl }}" >
-        <div *ngIf="" >
-        </div>
+        {{ celsius === false ? tempF : tempC }}
+        <span>{{ celsius === false ? ' F' : ' C'}}</span>
       </li>
+
       <li>{{ weatherData?.weather[0]?.description }}</li>
       <li>Country name: {{ country }}</li>
       <li>City: {{ weatherData?.name }}</li>

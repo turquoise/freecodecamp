@@ -15,6 +15,9 @@ export class WeatherComponent implements OnInit {
 
   celsius: boolean = false;
   weatherData;
+  temp;
+  tempF;
+  tempC;
   geoip;
   country;
   city;
@@ -51,6 +54,10 @@ export class WeatherComponent implements OnInit {
         this.weatherData = this.weatherService.getWeatherData();
         this.icon = this.weatherData.weather[0].icon;
         this.iconUrl = 'http://openweathermap.org/img/w/' + this.icon + '.png';
+        this.temp = this.weatherData.main.temp;
+        this.tempC = Math.round((this.temp - 32) * (5/9));
+        this.tempF = Math.round(this.temp);
+        console.log('this.temp ', this.temp);
         console.log('this.icon ', this.icon);
         console.log('this.iconUrl ', this.iconUrl);
         console.log('this.weatherData from component ', this.weatherData);
@@ -58,30 +65,10 @@ export class WeatherComponent implements OnInit {
 
     }
 
-
     onToggle() {
       this.celsius = !this.celsius;
-      console.log('this.celsius ', this.celsius);
+      //console.log('this.celsius ', this.celsius
     }
-
-
-  displayTemp(temp) {
-
-    if (this.celsius) {
-      this.c = Math.round( (temp-32) * (5/9)) + ' C';
-      this.celsius = true;
-      console.log('this.c ', this.c);
-      return this.c;
-    } else {
-      this.f = Math.round(temp) + ' F';
-      this.celsius = false;
-      console.log('this.f ', this.f);
-      return this.f;
-    }
-  }
-
-
-
 
   getgeoip() {
     this.weatherService.getGeoip()
