@@ -1,0 +1,42 @@
+.container-fluid {
+
+}
+
+.gameboard {
+  width: 372px;
+  height: 372px;
+  margin: auto;
+}
+
+.square {
+  float: left;
+  background: rgba(255, 255, 255, .9);
+  width: 122px;
+  height: 122px;
+  border: 1px solid black;
+  box-shadow: 8px 8px 15px #000;
+  -mozilla-shadow: 8px 8px 15px #000;
+  -webkit-box-shadow: 8px 8px 15px #000;
+  cursor: pointer;
+  text-align: center;
+  font-size:  100px;
+}
+
+.ex {
+  background-color: white;
+}
+
+.oh {
+  background-color: white;
+}
+
+.spacer {
+  padding: 1%;
+  text-align: center;
+}
+
+.btn {
+  box-shadow: 8px 8px 15px #000;
+  -mozilla-shadow: 8px 8px 15px #000;
+  -webkit-box-shadow: 8px 8px 15px #000;
+}

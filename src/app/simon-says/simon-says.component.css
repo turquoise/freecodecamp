@@ -1,0 +1,38 @@
+.block {
+  margin-left: 35%;
+
+}
+
+.simon-button {
+  height: 48px;
+  width: 48px;
+  cursor: pointer;
+}
+
+#red {
+  background-color:#c62828;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px 0px 0px 0px;
+}
+
+#blue {
+  background-color: #1565c0;
+  width: 200px;
+  height: 200px;
+  border-radius: 0px 0px 0px 100px;
+}
+
+#green {
+  background-color: #2e7d32;
+  width: 200px;
+  height: 200px;
+  border-radius: 0px 0px 100px 0px;
+}
+
+#yellow {
+  background-color: #fbc02d;
+  width: 200px;
+  height: 200px;
+  border-radius: 0px 100px 0px 0px;
+}

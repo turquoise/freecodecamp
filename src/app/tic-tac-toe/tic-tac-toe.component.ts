@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TicTacToeComponent implements OnInit {
 
+  
+
   constructor() { }
+
+  // https://www.youtube.com/watch?v=7YySrAQF_Jg
 
   ngOnInit() {
   }
