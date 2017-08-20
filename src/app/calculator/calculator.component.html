@@ -1,3 +1,38 @@
 <div class="container-fluid top">
-  <h1>Calculator</h1>
+  <div class="text-center">
+    <h1>Calculator</h1>
+  </div>
+  <div id="calculator">
+    <form #f>
+      <!-- <input class="display" type="text" id="display" name="display" #display disabled > -->
+      <div id="display">{{ box }}</div>
+      <br>
+      <input class="button" type="button" value="C" id="keys" #c (click)="toScreen('c')">
+      <input class="button" type="button" value="CE" id="keys" #ce (click)="backspace()">
+      <input class="button" type="button" value="x^2" id="keys" #x2 (click)="power(x2)">
+      <input class="button" type="button" value="+" id="keys" #add (click)="toScreen('+')">
+      <br>
+      <input class="button" type="button" value="7" id="keys" #seven (click)="toScreen('7')">
+      <input class="button" type="button" value="8" id="keys" #eight (click)="toScreen('8')">
+      <input class="button" type="button" value="9" id="keys" #nine (click)="toScreen('9')">
+      <input class="button" type="button" value="-" id="keys" #subtract (click)="toScreen('-')">
+      <br>
+      <input class="button" type="button" value="4" id="keys" #four (click)="toScreen('4')">
+      <input class="button" type="button" value="5" id="keys" #five (click)="toScreen('5')">
+      <input class="button" type="button" value="6" id="keys" #six (click)="toScreen('6')">
+      <input class="button" type="button" value="*" id="keys" #multiply (click)="toScreen('*')">
+      <br>
+      <input class="button" type="button" value="1" id="keys" #one (click)="toScreen('1')">
+      <input class="button" type="button" value="2" id="keys" #two (click)="toScreen('2')">
+      <input class="button" type="button" value="3" id="keys" #three (click)="toScreen('3')">
+      <input class="button" type="button" value="/" id="keys" #divide (click)="toScreen('/')">
+      <br>
+      <input class="button zero" type="button" value="0" id="keys" #zero (click)="toScreen('0')">
+      <input class="button decimal" type="button" value="." id="keys" #decimalpoint (click)="toScreen('.')">
+      <input class="button equal" type="button" value="=" id="equal" #equal (click)="answer()">
+
+
+
+    </form>
+  </div>
 </div>

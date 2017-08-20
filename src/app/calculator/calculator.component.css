@@ -1,0 +1,68 @@
+.container-fluid {
+  background-image: url('https://image.freepik.com/free-photo/wooden-surface-with-mobile-phone-and-green-leaf_23-2147608879.jpg');
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  background-size: 100%;
+  background-color: #b2bac5;
+  height: 800px;
+}
+
+form {
+  /*width: 300px;*/
+}
+
+#display {
+  /*width: 84*/
+  margin-bottom: 20px;
+  background-color: #e0e0e0;
+  height:  30px;
+  width: 9em;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px 1px black;
+  text-align: right;
+  font: 20px bold;
+
+}
+
+#keys {
+  width: 41px;
+  height: 35px;
+  margin-bottom: 4px;
+  box-shadow: 0px 0px 2px 1px black;
+  border-radius: 2px;
+  background-color: #9e9e9e;
+  outline: none;
+}
+
+#equal {
+  width: 87px;
+  height: 35px;
+  margin-bottom: 4px;
+  box-shadow: 0px 0px 2px 1px black;
+  border-radius: 2px;
+  background-color: #9e9e9e;
+  outline: none;
+}
+
+
+.button {
+  /*margin-top: 0;
+  width: 20%; */
+}
+
+.equal {
+  /*width: 41%;*/
+}
+
+#calculator {
+  /*text-align: center;*/
+  background-color: #424242;
+  width: 220px;
+  height: 300px;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 50px auto;
+  box-shadow: 0px 0px 3px  3px #212121;
+}
