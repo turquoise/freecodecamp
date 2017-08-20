@@ -22,7 +22,6 @@ import { TwitchComponent } from './twitch/twitch.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ClockComponent } from './clock/clock.component';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
-import { NavComponent } from './nav/nav.component';
 import { SimonSaysComponent } from './simon-says/simon-says.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
@@ -39,7 +38,6 @@ import { NavbarComponent } from './navbar/navbar.component';
     CalculatorComponent,
     ClockComponent,
     TicTacToeComponent,
-    NavComponent,
     SimonSaysComponent,
     NavbarComponent
   ],

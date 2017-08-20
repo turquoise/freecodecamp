@@ -1,3 +1,52 @@
 <div class="container-fluid top">
-  <h1>Clock</h1>
+
+  <div class="spacer"></div>
+  <div class="block text-center">
+    <h1>Pomodoro Clock</h1>
+    <div id="timeDiv">
+      <h1 id="title1">Session Time</h1><br>
+
+
+        <button *ngIf="showButton" id="m5time" class="btn btn-default custom" (click)="minusSession()">-</button>
+        <h2 id="session" ></h2>
+
+
+      <h2 id="num" >{{ minutes }}:{{ seconds }} </h2>
+
+
+        <button *ngIf="showButton" id="a5time" class="btn btn-default custom" (click)="addSession()">+</button><br><br>
+        <button *ngIf="showButton" id="reset" class="btn btn-default custom" (click)="onReset()">Reset</button>
+
+
+    </div>
+
+    <div *ngIf="playBuzzer">
+    <audio autoplay>
+      <source src="{{ buzzer }}" type="audio/mpeg">
+    </audio>
+    </div>
+
+
+    <div id="breakDiv">
+
+      <h1  *ngIf="showButton" id="title1">Break Time</h1><br>
+      <div *ngIf="showButton">
+
+        <button id="m5break" class="btn btn-default custom" (click)="minusBreak()">-</button>
+
+
+      <h2 id="breaknum" >{{ count2 }}</h2>
+
+
+
+      <button id="a5break" class="btn btn-default custom" (click)="addBreak()">+</button><br><br>
+      </div>
+
+    </div>
+
+    <button id="start" class="btn btn-default custom" (click)="onStart()">Start</button>
+
+  </div>
+  <div class="spacer"></div>
+
 </div>
