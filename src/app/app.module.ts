@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { CollapseModule } from 'ngx-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule, MdCardModule } from '@angular/material';
+import { MaterialModule, MdCardModule, MdSnackBarModule } from '@angular/material';
 
 
 import { AppComponent } from './app.component';
@@ -21,10 +21,11 @@ import { WikiComponent } from './wiki/wiki.component';
 import { TwitchComponent } from './twitch/twitch.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ClockComponent } from './clock/clock.component';
-import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { SimonSaysComponent } from './simon-says/simon-says.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TictactoeComponent } from './tictactoe/tictactoe.component';
+import { BoardComponent } from './tictactoe/board/board.component';
+import { SquareComponent } from './tictactoe/square/square.component';
 
 
 @NgModule({
@@ -38,10 +39,11 @@ import { TictactoeComponent } from './tictactoe/tictactoe.component';
     TwitchComponent,
     CalculatorComponent,
     ClockComponent,
-    TicTacToeComponent,
     SimonSaysComponent,
     NavbarComponent,
-    TictactoeComponent
+    TictactoeComponent,
+    BoardComponent,
+    SquareComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,8 @@ import { TictactoeComponent } from './tictactoe/tictactoe.component';
     FlexLayoutModule,
     CollapseModule,
     MaterialModule,
-    MdCardModule
+    MdCardModule,
+    MdSnackBarModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]

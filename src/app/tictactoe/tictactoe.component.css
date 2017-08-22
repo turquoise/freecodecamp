@@ -1,0 +1,24 @@
+.container-fluid {
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  background-color: #4fb3bf;
+  height: 800px;
+}
+
+.spacer {
+  padding: 1%;
+}
+
+.block {
+  /*margin-left: 25%;*/
+  margin-right: auto;
+  margin-left: auto;
+  width: 500px;
+  color: #e0f7fa;
+  opacity: 0.9;
+  background-color: #005662;
+  height: 600px;
+  border-radius: 40px;
+}

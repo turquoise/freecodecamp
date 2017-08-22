@@ -9,7 +9,6 @@ import { WikiComponent } from './wiki/wiki.component';
 import { TwitchComponent } from './twitch/twitch.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ClockComponent } from './clock/clock.component';
-import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { TictactoeComponent  } from './tictactoe/tictactoe.component';
 import { SimonSaysComponent } from './simon-says/simon-says.component';
 
@@ -23,7 +22,7 @@ const routes = [
   { path: 'twitch', component: TwitchComponent },
   { path: 'calculator', component: CalculatorComponent },
   { path: 'clock', component: ClockComponent },
-  { path: 'tic-tac-toe', component: TicTacToeComponent },
+  { path: 'tic-tac-toe', component: TictactoeComponent },
   { path: 'simon-says', component: SimonSaysComponent },
   { path: '**', redirectTo: '/home' }
 ];

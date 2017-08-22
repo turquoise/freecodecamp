@@ -1,0 +1,13 @@
+/*.row {
+  clear: both;
+}*/
+
+.box {
+  margin-left: 38%;
+  margin-top: 10%;
+}
+
+.status {
+  font-size: 40px;
+  color: #e0f7fa;
+}

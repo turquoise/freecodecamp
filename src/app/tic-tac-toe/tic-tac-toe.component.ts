@@ -28,17 +28,16 @@ export class TicTacToeComponent implements OnInit {
 
   game = [];
   square;
-  sqx = [
+
+  sq = [
     "", "", "",
     "", "", "",
     "", "", ""
   ];
 
-  sqo = [
-    "", "", "",
-    "", "", "",
-    "", "", ""
-  ];
+
+
+
 
   squareSelected;
   hidegameboard = false;
@@ -76,8 +75,8 @@ export class TicTacToeComponent implements OnInit {
         this.gameboard2[num] = 'x';
         //console.log('you have selected ', this.gameboard2[num]);
         console.log('this.gameboard2 ', this.gameboard2 );
-        this.sqx[num] = 'sqx' + num;
-        console.log('this.sqx ', this.sqx);
+        this.sq[num] = 'sqx' + num;
+        console.log('this.sq ', this.sq);
 
 
         if (this.didIWin('x')) {
@@ -133,16 +132,16 @@ export class TicTacToeComponent implements OnInit {
 
   randomSquare() {
     let rand = Math.floor(Math.random() * 9) + 1;
+    this.gameboard2.forEach( (el) => {
 
-    for (let i = 0; i < this.gameboard2.length + 1; i++) {
-      if ( _.includes(this.gameboard2[i], "") ) {
+      if (this.gameboard2[el] !== "x" || this.gameboard2[el] !== 'o') {
+
 
         this.gameboard2[rand] = 'o';
         console.log('randomsquare this.gameboard2 ', this.gameboard2);
-        //this.gameboard[rand] = 'sq' + rand.toString() + 'o';
-        //console.log('this.gameboard ', this.gameboard);
-        this.sqo[rand] = 'sqo' + rand;
-        console.log('this.sqo ', this.sqo);
+
+        this.sq[rand] = 'sqo' + rand;
+        console.log('this.sq ', this.sq);
 
       }
       if (this.didIWin('o')) {
@@ -151,15 +150,14 @@ export class TicTacToeComponent implements OnInit {
         this.gamewon = true;
         this.reload = true;
       } else {
-        //console.log('I did not win yet');
-        //console.log('player 2 turn this.gameboard ', this.gameboard2);
+
         this.player = 1;
       }
 
-    }
+    })
+
 
 
   }
-
 
   }

@@ -1,17 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-tictactoe',
   templateUrl: './tictactoe.component.html',
-  styleUrls: ['./tictactoe.component.css']
+  styleUrls: ['./tictactoe.component.css'],
+  providers: []
 })
 export class TictactoeComponent implements OnInit {
 
+
+
   constructor() { }
 
-  // https://csharperimage.jeremylikness.com/2016/05/tic-tac-toe-in-angular-2.html
+  // https://www.youtube.com/watch?v=dfIkIptSaC8
 
   ngOnInit() {
   }
+
 
 }
