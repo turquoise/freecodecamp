@@ -3,26 +3,28 @@
   <div class="spacer"></div>
   <div class="gameboard" id="gameboard" >
     <div class="row">
-      <div class="square sq1"></div>
-      <div class="square sq2"></div>
-      <div class="square sq3"></div>
+      <div class="square sq1" (click)="onClick('0')"></div>
+      <div class="square sq2" (click)="onClick('1')"></div>
+      <div class="square sq3" (click)="onClick('2')"></div>
     </div>
     <div class="row">
-      <div class="square sq4"></div>
-      <div class="square sq5"></div>
-      <div class="square sq6"></div>
+      <div class="square sq4" (click)="onClick('3')"></div>
+      <div class="square sq5" (click)="onClick('4')"></div>
+      <div class="square sq6" (click)="onClick('5')"></div>
     </div>
     <div class="row">
-      <div class="square sq7"></div>
-      <div class="square sq8"></div>
-      <div class="square sq9"></div>
+      <div class="square sq7" (click)="onClick('6')"></div>
+      <div class="square sq8" (click)="onClick('7')"></div>
+      <div class="square sq9" (click)="onClick('8')"></div>
     </div>
   </div>
-  <div class="spacer"></div>
-  <div class="col-md-12 text-center" id="reload">
-    <a class="btn btn-primary btn-lg">Reload Game?</a>
+  <div *ngIf="gamewon">
+    <div class="spacer"></div>
+    <div class="col-md-12 text-center" id="reload">
+      <a class="btn btn-primary btn-lg">Reload Game?</a>
+    </div>
+    <div class="col-md-12 text-center" id="win">Player 1 has won the game!!!</div>
+    <div class="col-md-12 text-center" id="computer">The Computer has won the game!!!</div>
   </div>
-  <div class="col-md-12 text-center" id="win">Player 1 has won the game!!!</div>
-  <div class="col-md-12 text-center" id="terminator">Terminator has won the game!!!</div>
 
 </div>

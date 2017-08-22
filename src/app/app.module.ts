@@ -24,6 +24,7 @@ import { ClockComponent } from './clock/clock.component';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { SimonSaysComponent } from './simon-says/simon-says.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { TictactoeComponent } from './tictactoe/tictactoe.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ClockComponent,
     TicTacToeComponent,
     SimonSaysComponent,
-    NavbarComponent
+    NavbarComponent,
+    TictactoeComponent
   ],
   imports: [
     BrowserModule,

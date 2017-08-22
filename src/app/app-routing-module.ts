@@ -10,6 +10,7 @@ import { TwitchComponent } from './twitch/twitch.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ClockComponent } from './clock/clock.component';
 import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
+import { TictactoeComponent  } from './tictactoe/tictactoe.component';
 import { SimonSaysComponent } from './simon-says/simon-says.component';
 
 
