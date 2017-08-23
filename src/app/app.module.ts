@@ -20,12 +20,12 @@ import { WeatherComponent } from './weather/weather.component';
 import { WikiComponent } from './wiki/wiki.component';
 import { TwitchComponent } from './twitch/twitch.component';
 import { CalculatorComponent } from './calculator/calculator.component';
-import { ClockComponent } from './clock/clock.component';
 import { SimonSaysComponent } from './simon-says/simon-says.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TictactoeComponent } from './tictactoe/tictactoe.component';
 import { BoardComponent } from './tictactoe/board/board.component';
 import { SquareComponent } from './tictactoe/square/square.component';
+import { PomodoroClockComponent } from './pomodoro-clock/pomodoro-clock.component';
 
 
 @NgModule({
@@ -38,12 +38,12 @@ import { SquareComponent } from './tictactoe/square/square.component';
     WikiComponent,
     TwitchComponent,
     CalculatorComponent,
-    ClockComponent,
     SimonSaysComponent,
     NavbarComponent,
     TictactoeComponent,
     BoardComponent,
-    SquareComponent
+    SquareComponent,
+    PomodoroClockComponent
   ],
   imports: [
     BrowserModule,

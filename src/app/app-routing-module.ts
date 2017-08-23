@@ -8,9 +8,9 @@ import { WeatherComponent } from './weather/weather.component';
 import { WikiComponent } from './wiki/wiki.component';
 import { TwitchComponent } from './twitch/twitch.component';
 import { CalculatorComponent } from './calculator/calculator.component';
-import { ClockComponent } from './clock/clock.component';
 import { TictactoeComponent  } from './tictactoe/tictactoe.component';
 import { SimonSaysComponent } from './simon-says/simon-says.component';
+import { PomodoroClockComponent } from './pomodoro-clock/pomodoro-clock.component';
 
 
 const routes = [
@@ -21,7 +21,7 @@ const routes = [
   { path: 'wiki', component: WikiComponent },
   { path: 'twitch', component: TwitchComponent },
   { path: 'calculator', component: CalculatorComponent },
-  { path: 'clock', component: ClockComponent },
+  { path: 'pomodoro-clock', component: PomodoroClockComponent },
   { path: 'tic-tac-toe', component: TictactoeComponent },
   { path: 'simon-says', component: SimonSaysComponent },
   { path: '**', redirectTo: '/home' }
