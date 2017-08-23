@@ -16,6 +16,11 @@ export class SimonsaysComponent implements OnInit {
   player = [];
   message = 'start game';
   strict = false;
+  level = 1;
+  activeB = false;
+  activeY = false;
+  activeR = false;
+  activeG = false;
 
 
   // https://medium.com/front-end-hacking/create-simon-game-in-javascript-d53b474a7416
@@ -36,11 +41,13 @@ export class SimonsaysComponent implements OnInit {
     this.currentGame = [];
     this.count = 0;
     this.addCount();
+
   }
 
   addCount() {
     this.count++;
     // add an animated fade out;
+    console.log('this.count ', this.count);
     this.generateMove();
 
   }
@@ -68,7 +75,8 @@ export class SimonsaysComponent implements OnInit {
       let check = this.player.length === this.currentGame.length;
       if (check) {
         if (this.count === 20) {
-          this.message = 'You won! Congrats!';
+          this.message = 'You have won!';
+          this.level = 1;
         } else {
           this.message = 'Next round!';
           this.nextLevel();
@@ -78,11 +86,27 @@ export class SimonsaysComponent implements OnInit {
   }
 
   nextLevel() {
-    this.addCount();
+    if (this.count < 5 ) {
+      this.level = 1;
+      this.addCount();
+    } else if (this.count > 5) {
+      this.level = 2;
+      this.addCount();
+    }
   }
 
   generateMove() {
-    this.currentGame.push(this.possibilities[ Math.floor(Math.random() * 4) ]);
+    let showColor = this.possibilities[ Math.floor(Math.random() * 4) ];
+    this.currentGame.push(showColor);
+    if (showColor === 'Red') {
+      this.activeR = true;
+    } else if (showColor === 'Blue') {
+      this.activeB = true;
+    } else if (showColor === 'Green') {
+      this.activeG = true;
+    } else if (showColor === 'Yellow') {
+       this.activeY = true;
+    }
     console.log('this.currentGame ', this.currentGame);
     this.showMoves();
   }
@@ -96,7 +120,7 @@ export class SimonsaysComponent implements OnInit {
         clearInterval(moves);
       }
     }, 600);
-    this.clearPlayer();
+    //this.clearPlayer();
   }
 
   onSound(name) {
@@ -107,7 +131,18 @@ export class SimonsaysComponent implements OnInit {
     // add hover
     // add sound
     // display a field
+    if (field === 'Red') {
+      this.activeR = false;
+    } else if (field === 'Blue') {
+      this.activeB = false;
+    } else if (field === 'Green') {
+      this.activeG = false;
+    } else if (field === 'Yellow') {
+       this.activeY = false;
+    }
+
     console.log('playGame field ', field);
+
   }
 
   onStrict() {

@@ -20,7 +20,6 @@ import { WeatherComponent } from './weather/weather.component';
 import { WikiComponent } from './wiki/wiki.component';
 import { TwitchComponent } from './twitch/twitch.component';
 import { CalculatorComponent } from './calculator/calculator.component';
-import { SimonSaysComponent } from './simon-says/simon-says.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TictactoeComponent } from './tictactoe/tictactoe.component';
 import { BoardComponent } from './tictactoe/board/board.component';
@@ -39,7 +38,6 @@ import { SimonsaysComponent } from './simonsays/simonsays.component';
     WikiComponent,
     TwitchComponent,
     CalculatorComponent,
-    SimonSaysComponent,
     NavbarComponent,
     TictactoeComponent,
     BoardComponent,

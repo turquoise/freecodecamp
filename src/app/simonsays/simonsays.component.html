@@ -9,39 +9,48 @@
           <h5>Settings</h5>
         </div> -->
         <div class="row top-row">
-          <div id="blue" class="gamebutton" (click)="addToPlayer('Blue')">
-            <p class="text" [style.color]="colorText[0]" >{{ colorName[0] }}</p>
+          <div [ngClass]="{ 'blueActive' : activeB, 'blue' : !activeB}"
+              class="gamebutton"
+              (click)="addToPlayer('Blue')">
+            <p class="text" >{{ colorName[0] }}</p>
           </div>
         </div>
-        <div class="row">
 
+        <div class="row middle-row">
           <div class="col-xs-4">
             <div class="middle-left">
-              <div id="green" class="gamebutton" (click)="addToPlayer('Green')">
-                <p class="text" [style.color]="colorText[1]">{{ colorName[1] }}</p>
+              <div [ngClass]="{ 'greenActive' : activeG, 'green' : !activeG}"
+                  class="gamebutton"
+                  (click)="addToPlayer('Green')">
+                <p class="text">{{ colorName[1] }}</p>
               </div>
             </div>
           </div>
           <div class="col-xs-4">
             <div class="gamenumber">
-              <h2 id="clickNumber">{{ clickNumber }}</h2>
+              <h4>Level: {{ level }}</h4>
+              <h4 id="clickNumber">{{ count }}</h4>
               <h4>{{ message }}</h4>
             </div>
           </div>
           <div class="col-xs-4">
             <div class="middle-right">
-              <div id="yellow" class="gamebutton" (click)="addToPlayer('Yellow')">
-                <p class="text" [style.color]="colorText[2]">{{ colorName[2] }}</p>
+              <div [ngClass]="{'yellowActive' : activeY , 'yellow' : !activeY}"
+                  class="gamebutton"
+                  (click)="addToPlayer('Yellow')">
+                <p class="text">{{ colorName[2] }}</p>
               </div>
             </div>
           </div>
         </div>
 
         <div class="row bottom-row">
-          <div id="red" class="gamebutton" (click)="addToPlayer('Red')">
-            <p class="text" [style.color]="colorText[3]" >{{ colorName[3] }}</p>
+          <div [ngClass]="{'redActive' : activeR, 'red' : !activeR}"
+              class="gamebutton"
+              (click)="addToPlayer('Red')">
+            <p class="text" >{{ colorName[3] }}</p>
           </div>
-          <div id="dark" class="gamebutton" (click)="addToPlayer('dark')"></div>
+          <!-- <div id="dark" class="gamebutton" (click)="addToPlayer('dark')"></div> -->
         </div>
       </div>
     </div>
