@@ -18,9 +18,8 @@ export class SimonSaysComponent implements OnInit {
   colors = [this.red, this.green, this.yellow, this.blue];
   step = 0;
 
-  // https://www.youtube.com/watch?v=_r6B369ZTsc
-  // https://stackoverflow.com/questions/29951293/using-lodash-to-compare-arrays-items-existence-without-order
-  // https://medium.com/@urish/building-simon-with-angular2-iot-part-2-ee3a270747b5
+  // https://medium.com/front-end-hacking/create-simon-game-in-javascript-
+  
   constructor() { }
 
   ngOnInit() {
@@ -50,30 +49,6 @@ export class SimonSaysComponent implements OnInit {
       console.log('this.sequence ', this.sequence);
     }
 
-
-    // if (this.sequence.length) {
-    //   // does color match the step we are on.
-    //   if (color === this.sequence[this.step]) {
-    //     // go to the next step.
-    //     if (this.step === this.sequence.length - 1) {
-    //       this.step = 0;
-    //       console.log('sequence complete');
-    //       this.randomSequence();
-    //     }
-    //   } else {
-    //     this.step++;
-    //   }
-    // }
-    // else {
-    //   // lose condition
-    //   alert('wrong color');
-    //   this.sequence = [];
-    //   this.step = 0;
-    // }
-    // console.log('new color ', color.id);
-    // //this.simon1.push({color: color.id});
-    // this.simon.push(color.id);
-    // console.log('this.simon ', this.simon);
   }
 
 

@@ -26,6 +26,7 @@ import { TictactoeComponent } from './tictactoe/tictactoe.component';
 import { BoardComponent } from './tictactoe/board/board.component';
 import { SquareComponent } from './tictactoe/square/square.component';
 import { PomodoroClockComponent } from './pomodoro-clock/pomodoro-clock.component';
+import { SimonsaysComponent } from './simonsays/simonsays.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { PomodoroClockComponent } from './pomodoro-clock/pomodoro-clock.componen
     TictactoeComponent,
     BoardComponent,
     SquareComponent,
-    PomodoroClockComponent
+    PomodoroClockComponent,
+    SimonsaysComponent
   ],
   imports: [
     BrowserModule,

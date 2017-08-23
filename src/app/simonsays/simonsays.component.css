@@ -1,0 +1,181 @@
+.container-fluid {
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #62727b;
+  height: 800px;
+}
+
+.spacer {
+  padding: 1%;
+}
+
+.block {
+  /*margin-left: 25%;*/
+  margin-right: auto;
+  margin-left: auto;
+  width: 500px;
+  color: white;
+  opacity: 0.9;
+  background-color: #102027;
+  height: 600px;
+  border-radius: 40px;
+}
+
+
+
+.gamefield {
+  max-width: 480px;
+  margin: 20px auto;
+}
+
+.align {
+  display: flex;
+  justify-content: center;
+}
+
+.top-row {
+  margin-left: 33%;
+}
+
+.bottom-row {
+  margin-left: 33%;
+}
+
+.middle-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 15px auto;
+}
+
+.text {
+  margin-top: 35px;
+}
+
+#blue {
+  width: 150px;
+  font-size: 30px;
+  font-weight: bold;
+  color: blue;
+  height: 150px;
+  border-radius: 75px;
+  border: 10px solid blue;
+  background-color: lightblue;
+}
+
+#green {
+  width: 150px;
+  font-size: 30px;
+  font-weight: bold;
+  color: green;
+  height: 150px;
+  border-radius: 75px;
+  border: 10px solid green;
+  background-color: lightgreen;
+}
+
+#red {
+  width: 150px;
+  font-size: 30px;
+  font-weight: bold;
+  color: red;
+  height: 150px;
+  border-radius: 75px;
+  border: 10px solid red;
+  background-color: pink;
+}
+
+#yellow {
+  width: 150px;
+  font-size: 30px;
+  font-weight: bold;
+  color: goldenrod;
+  height: 150px;
+  border-radius: 75px;
+  border: 10px solid goldenrod;
+  background-color: yellow;
+}
+
+
+
+/*.bottom-row {
+  .align;
+}*/
+
+/*@buttonWidth: 90px;
+.gamebutton {
+  width: @buttonWidth;
+  height: @buttonWidth;
+  border-radius: 400px;
+}*/
+
+/*.border(@color) {
+  border: 4px solid @color;
+  margin: 20px;
+  &:active {
+    // DO NOT USE HOVER  (better mobile performance)
+    background-color: @color;
+  }
+}*/
+
+/*.onhover(@color) {
+  background-color: @color;
+}*/
+
+/*#blue {
+  .border(@tiffany-blue);
+}
+
+#green {
+  .border(@kelly-green);
+}
+
+#red {
+  .border(@red);
+}
+
+#dark {
+  .border(@dark);
+}
+
+#blue.hover {
+  .onhover(@tiffany-blue);
+}
+
+#green.hover {
+  .onhover(@kelly-green);
+}
+
+#red.hover {
+  .onhover(@red);
+}
+
+#dark.hover {
+  .onhover(@dark);
+}
+
+.btn-sett {
+  font-size: 2.7em;
+  text-align: left;
+  transition: 500ms;
+  width: 70px;
+  margin-right: 340px;
+  &:hover {
+    color:  @kelly-green;
+  }
+}
+
+.modal-title {
+  .black;
+}
+
+.black {
+  color: @rich-black;
+  text-align: center;
+}
+
+#strict {
+  margin: 5px auto;
+  text-align: center;
+}*/
