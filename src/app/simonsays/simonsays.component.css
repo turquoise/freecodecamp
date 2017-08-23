@@ -14,7 +14,7 @@
   /*margin-left: 25%;*/
   margin-right: auto;
   margin-left: auto;
-  width: 500px;
+  width: 600px;
   color: white;
   opacity: 0.9;
   background-color: #102027;
@@ -42,6 +42,22 @@
   margin-left: 33%;
 }
 
+.middle-left {
+  margin-left: 0%;
+}
+
+.middle-right {
+  margin-left: 15%;
+}
+
+.gamenumber {
+  /*border: 1px solid white;*/
+  margin-top: 30px;
+  margin-left: 25px;
+  width: 150px;
+
+}
+
 .middle-row {
   display: flex;
   justify-content: space-around;
@@ -51,13 +67,14 @@
 
 .text {
   margin-top: 35px;
+  cursor: pointer;
 }
 
 #blue {
   width: 150px;
   font-size: 30px;
   font-weight: bold;
-  color: blue;
+  /*color: blue;*/
   height: 150px;
   border-radius: 75px;
   border: 10px solid blue;
@@ -68,7 +85,7 @@
   width: 150px;
   font-size: 30px;
   font-weight: bold;
-  color: green;
+  /*color: green;*/
   height: 150px;
   border-radius: 75px;
   border: 10px solid green;
@@ -79,7 +96,7 @@
   width: 150px;
   font-size: 30px;
   font-weight: bold;
-  color: red;
+  /*color: red;*/
   height: 150px;
   border-radius: 75px;
   border: 10px solid red;
@@ -90,7 +107,7 @@
   width: 150px;
   font-size: 30px;
   font-weight: bold;
-  color: goldenrod;
+  /*color: goldenrod;*/
   height: 150px;
   border-radius: 75px;
   border: 10px solid goldenrod;
