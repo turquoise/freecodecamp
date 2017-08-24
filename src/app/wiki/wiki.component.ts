@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { WikiService } from './wiki.service';
 import { Observable } from 'rxjs/Observable';
 import * as $ from 'jquery';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-wiki',
@@ -9,9 +10,11 @@ import * as $ from 'jquery';
   styleUrls: ['./wiki.component.css'],
   providers: [WikiService]
 })
-export class WikiComponent implements OnInit {
+export class WikiComponent implements OnInit, OnDestroy {
 
   items: Observable<string[]>;
+
+  private wikiSubscription: Subscription;
 
   heading;
   wikiList =[];
@@ -33,24 +36,26 @@ export class WikiComponent implements OnInit {
   ngOnInit() {
     this.search(this.userSearch);
 
-
-
   }
 
-  jqueryTest() {
-    this.wikiURL += '?' + $.param({
-      'action' : 'opensearch',
-      'search' :  this.userSearch,
-      'prop'  : 'revisions',
-      'rvprop' : 'content',
-      'format' : 'json',
-      'limit' : 10
-    });
+  ngOnDestroy() {
+    this.wikiSubscription.unsubscribe();
   }
+
+  // jqueryTest() {
+  //   this.wikiURL += '?' + $.param({
+  //     'action' : 'opensearch',
+  //     'search' :  this.userSearch,
+  //     'prop'  : 'revisions',
+  //     'rvprop' : 'content',
+  //     'format' : 'json',
+  //     'limit' : 10
+  //   });
+  // }
 
   search(searchTerm) {
     //this.items = this.wikiService.search(searchTerm);
-    this.wikiService.search(searchTerm)
+    this.wikiSubscription = this.wikiService.search(searchTerm)
       .subscribe( result => {
         console.log('result ', result);
         this.items = result;

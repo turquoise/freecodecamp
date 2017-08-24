@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TwitchService } from './twitch.service';
 import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
 
 import * as $ from 'jquery';
 
@@ -10,7 +11,11 @@ import * as $ from 'jquery';
   styleUrls: ['./twitch.component.css'],
   providers: [TwitchService]
 })
-export class TwitchComponent implements OnInit {
+export class TwitchComponent implements OnInit, OnDestroy {
+
+  private twitchUserSubscription: Subscription;
+  private twitchStreamSubscription: Subscription;
+  private twitchChannelSubscription: Subscription;
 
 
   items;
@@ -47,13 +52,17 @@ export class TwitchComponent implements OnInit {
       this.getTwitchChannel(this.channel);
 
     })
+  }
 
-
+  ngOnDestroy() {
+    this.twitchUserSubscription.unsubscribe();
+    this.twitchStreamSubscription.unsubscribe();
+    this.twitchChannelSubscription.unsubscribe();
   }
 
 
   getTwitchChannel(item) {
-    this.twitchService.getChannel(item)
+    this.twitchChannelSubscription = this.twitchService.getChannel(item)
       .subscribe( result => {
         this.dataChannel = result;
         //console.log('this.dataChannel ', this.dataChannel);
@@ -62,7 +71,7 @@ export class TwitchComponent implements OnInit {
   }
 
   getTwitchStream(item) {
-    this.twitchService.getStream(item)
+    this.twitchStreamSubscription = this.twitchService.getStream(item)
       .subscribe( res => {
         this.dataStream = res;
         console.log('twitch data stream ', this.dataStream);
@@ -118,7 +127,7 @@ export class TwitchComponent implements OnInit {
   }
 
   getTwitchUser(item) {
-    this.twitchService.getTwitchUser(item)
+    this.twitchUserSubscription = this.twitchService.getTwitchUser(item)
       .subscribe( result => {
         this.dataUser = result;
         this.user = this.dataUser.display_name;

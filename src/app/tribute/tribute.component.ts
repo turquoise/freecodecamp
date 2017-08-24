@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TributeService } from './tribute.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-tribute',
@@ -7,7 +8,11 @@ import { TributeService } from './tribute.service';
   styleUrls: ['./tribute.component.css'],
   providers: [TributeService]
 })
-export class TributeComponent implements OnInit {
+export class TributeComponent implements OnInit, OnDestroy {
+
+  private googleBooksSubscription: Subscription;
+  private wikiDataSubscription: Subscription;
+  private wikiSearchSubscription: Subscription;
 
   searchStr: string;
   imageUrl = 'https://commons.wikimedia.org/wiki/';
@@ -50,12 +55,18 @@ export class TributeComponent implements OnInit {
     this.getGoogleBooks();
     this.getWikiData();
     this.getWikiSearch();
-    this.getWikiExtract();
+    //this.getWikiExtract();
 
   }
 
+  ngOnDestroy() {
+    this.googleBooksSubscription.unsubscribe();
+    this.wikiSearchSubscription.unsubscribe();
+    this.wikiDataSubscription.unsubscribe();
+  }
+
   getGoogleBooks() {
-    this.tributeService.getGoogleBooks()
+    this.googleBooksSubscription = this.tributeService.getGoogleBooks()
       .subscribe( res =>  {
         this.books = res;
         this.book2Author = res.items[1].volumeInfo.authors;
@@ -81,18 +92,18 @@ export class TributeComponent implements OnInit {
       });
   }
 
-  getWikiExtract() {
-    // Johannes Itten Extract
-    this.tributeService.searchWikiExtract()
-      .subscribe( res => {
-        this.wikiExtract = res.query.pages[451137].extract;
-        console.log('getWikiExtract ', res.query.pages[451137].extract);
-      });
-  }
+  // getWikiExtract() {
+  //   // Johannes Itten Extract
+  //   this.tributeService.searchWikiExtract()
+  //     .subscribe( res => {
+  //       this.wikiExtract = res.query.pages[451137].extract;
+  //       console.log('getWikiExtract ', res.query.pages[451137].extract);
+  //     });
+  // }
 
   getWikiSearch() {
     // Color theory
-    this.tributeService.searchWiki()
+    this.wikiSearchSubscription = this.tributeService.searchWiki()
       .subscribe( res => {
         this.wikiColor = res;
         this.wikiColorTitle = res[1][0];
@@ -109,7 +120,7 @@ export class TributeComponent implements OnInit {
 
   getWikiData() {
     // Johannes Itten
-    this.tributeService.search()
+    this.wikiDataSubscription = this.tributeService.search()
       .subscribe( res => {
         this.wikiData = res;
         this.wikiName = res[1];

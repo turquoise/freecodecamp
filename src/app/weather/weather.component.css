@@ -1,5 +1,61 @@
 .container-fluid {
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #b2bac5;
+  height: 800px;
+}
+
+.thunder {
+  background-image: url('http://i3.somersetlive.co.uk/incoming/article75204.ece/ALTERNATES/s1200/Thunder.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #b2bac5;
+  height: 800px;
+}
+
+.drizzle {
+  background-image: url('https://c1.staticflickr.com/7/6191/6113430622_370016e5a9_z.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #b2bac5;
+  height: 800px;
+}
+
+.rain {
+  background-image: url('https://sites.psu.edu/siowfa16/files/2016/10/rain-generic_650x400_71457950721-1043ddi.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #b2bac5;
+  height: 800px;
+}
+
+.snow {
+  background-image: url('http://media.phillyvoice.com/media/images/01282017_light_snow_on_roads_i.2e16d0ba.fill-1200x630-c0.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #b2bac5;
+  height: 800px;
+}
+
+.fog {
+  background-image: url('http://www.metoffice.gov.uk/binaries/content/gallery/mohippo/images/migrated-image/9/walkers-486583_1920_1.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #b2bac5;
+  height: 800px;
+}
+
+.clear {
   background-image: url('http://images.all-free-download.com/images/graphiclarge/hd_sky_picture_05_hd_pictures_166299.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #b2bac5;
+  height: 800px;
+}
+
+.cloudy {
+  background-image: url('https://static.pexels.com/photos/216596/pexels-photo-216596.jpeg');
   background-repeat: no-repeat;
   background-size: 100%;
   background-color: #b2bac5;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { WeatherService } from './weather.service';
 import { Subscription } from 'rxjs/Subscription';
 import * as $ from 'jquery';
@@ -9,9 +9,10 @@ import * as $ from 'jquery';
   styleUrls: ['./weather.component.css'],
   providers: [ WeatherService ]
 })
-export class WeatherComponent implements OnInit {
+export class WeatherComponent implements OnInit, OnDestroy {
 
-  subscription: Subscription;
+  private weatherSubscription: Subscription;
+  private ipSubscription: Subscription;
 
   celsius: boolean = false;
   weatherData;
@@ -26,21 +27,29 @@ export class WeatherComponent implements OnInit {
   icon;
   f;
   c;
-
   iconUrl;
+  icons;
+
+  thunder: boolean = false;
+  drizzle: boolean = false;
+  rain: boolean = false;
+  snow: boolean = false;
+  fog: boolean = false;
+  clear: boolean = false;
+  cloudy: boolean = false;
+
+  backgroundId = [299, 499, 599, 699, 799, 800, 801 ];
 
   // from kelvin to celcius subtract 273
-  backgroundImages = [
-    { "299 thunder": "http://i3.somersetlive.co.uk/incoming/article75204.ece/ALTERNATES/s1200/Thunder.jpg"}, // up to 299 it is thunder storm
-    { "499 drizzle": "https://c1.staticflickr.com/7/6191/6113430622_370016e5a9_z.jpg"}, // up to 499 it is drizzle between 299 and 499
-    { "599 rain": "https://sites.psu.edu/siowfa16/files/2016/10/rain-generic_650x400_71457950721-1043ddi.jpg"}, // from 499 to 599 it is rain.
-    { "699 snow": "http://media.phillyvoice.com/media/images/01282017_light_snow_on_roads_i.2e16d0ba.fill-1200x630-c0.jpg"}, // up to 699 it is snow.
-    { "799 fog": ""}, // up to 799 it is fog.
-    { "800 clear": ""}, //just 800 it is clear sky.
-    { "801 cloudy": ""} // anything over 801 is cloudy.
-  ];
+
+  // up to 299 it is thunder storm
+  // up to 499 it is drizzle between 299 and 499
+  // from 499 to 599 it is rain.
+  // up to 699 it is snow.
+  // up to 799 it is fog.
+  //just 800 it is clear sky.
+  // anything over 801 is cloudy.
   // https://openweathermap.org/weather-conditions
-  icons;
 
   constructor(private weatherService: WeatherService) {
 
@@ -49,7 +58,7 @@ export class WeatherComponent implements OnInit {
   ngOnInit() {
 
     this.getgeoip();
-    this.subscription = this.weatherService.weatherDataChanged.subscribe(
+    this.weatherSubscription = this.weatherService.weatherDataChanged.subscribe(
       () => {
         this.weatherData = this.weatherService.getWeatherData();
         this.icon = this.weatherData.weather[0].icon;
@@ -57,12 +66,53 @@ export class WeatherComponent implements OnInit {
         this.temp = this.weatherData.main.temp;
         this.tempC = Math.round((this.temp - 32) * (5/9));
         this.tempF = Math.round(this.temp);
-        console.log('this.temp ', this.temp);
-        console.log('this.icon ', this.icon);
-        console.log('this.iconUrl ', this.iconUrl);
-        console.log('this.weatherData from component ', this.weatherData);
+        //console.log('this.temp ', this.temp);
+        //console.log('this.icon ', this.icon);
+        //console.log('this.iconUrl ', this.iconUrl);
+        //console.log('this.weatherData from component ', this.weatherData);
+        let id = this.weatherData.weather[0].id;
+        //let bgIndex;
+        console.log('id ', id);
+        //this.backgroundId.push(id);
+        //console.log('backgroundId ', backgroundId);
+        //bgIndex = this.backgroundId.sort().indexOf(id);
+        //console.log('bgIndex ', bgIndex);
+        //this.backgroundImage[bgIndex];
+        //this.changeBackgroundImage(bgIndex);
+        this.changeBackgroundImage(id);
+
       })
 
+    }
+
+    ngOnDestroy() {
+      this.weatherSubscription.unsubscribe();
+      this.ipSubscription.unsubscribe();
+    }
+
+    changeBackgroundImage(id) {
+      if (id <= 299) {
+        this.thunder = true;
+      } else if (id > 299 && id <= 499) {
+        this.drizzle = true;
+      } else if (id > 499 && id <= 599) {
+        this.rain = true;
+      } else if (id > 599 && id <= 699) {
+        this.snow = true;
+      } else if (id > 699 && id <= 799) {
+        this.fog = true;
+      } else if (id === 800) {
+        this.clear = true;
+      } else if (id > 800) {
+        this.cloudy = true;
+      }
+      // up to 299 it is thunder storm
+      // up to 499 it is drizzle between 299 and 499
+      // from 499 to 599 it is rain.
+      // up to 699 it is snow.
+      // up to 799 it is fog.
+      //just 800 it is clear sky.
+      // anything over 801 is cloudy.
     }
 
     onToggle() {
@@ -71,18 +121,18 @@ export class WeatherComponent implements OnInit {
     }
 
   getgeoip() {
-    this.weatherService.getGeoip()
+    this.ipSubscription = this.weatherService.getGeoip()
       .subscribe( res => {
         this.geoip = res;
-        console.log('this.geoip ', this.geoip);
+        //console.log('this.geoip ', this.geoip);
         this.city = res.city;
         this.country = res.country.name;
         this.lat = res.location.latitude;
         this.long = res.location.longitude;
-        console.log('this.city ', this.city);
-        console.log('this.country ', this.country);
-        console.log('this.lat ', this.lat);
-        console.log('this.long ', this.long);
+        //console.log('this.city ', this.city);
+        //console.log('this.country ', this.country);
+        //console.log('this.lat ', this.lat);
+        //console.log('this.long ', this.long);
       })
   }
 

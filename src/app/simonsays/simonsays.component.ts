@@ -109,21 +109,8 @@ export class SimonsaysComponent implements OnInit {
     }, 600);
     this.clearPlayer();
 
-
   }
 
-  // onSound(name) {
-  //   if (name === 'Green') {
-  //     this.greensound = true;
-  //   } else if (name === 'Blue') {
-  //     this.bluesound = true;
-  //   } else if (name === 'Red') {
-  //     this.redsound = true;
-  //   } else if (name === 'Yellow') {
-  //     this.yellowsound = true;
-  //   }
-  //
-  // }
 
   playGame(field) {
     if ( field === 'Red') {

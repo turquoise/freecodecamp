@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Quote } from './quote.model';
 import { QuoteService } from './quote.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-quote',
@@ -9,6 +10,8 @@ import { QuoteService } from './quote.service';
   providers: [QuoteService]
 })
 export class QuoteComponent implements OnInit, OnDestroy {
+
+  private quoteSubscription: Subscription;
 
   quote: Quote;
 
@@ -26,11 +29,11 @@ export class QuoteComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // remove the subscription
+    this.quoteSubscription.unsubscribe();
   }
 
   getRandomQuote() {
-    this.quoteService.getQuotesApi()
+    this.quoteSubscription = this.quoteService.getQuotesApi()
       .subscribe( result => {
         console.log('quote result ', result);
         this.randomQuote = result;
