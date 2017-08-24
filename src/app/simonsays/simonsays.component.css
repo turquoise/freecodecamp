@@ -18,16 +18,16 @@
   color: white;
   opacity: 0.9;
   background-color: #102027;
-  height: 600px;
+  height: 550px;
   border-radius: 40px;
 }
 
 .top-row {
-  margin-left: 35%;
+  margin-left: 40%;
 }
 
 .bottom-row {
-  margin-left: 35%;
+  margin-left: 40%;
 }
 
 /*.middle-left {
@@ -38,10 +38,15 @@
   margin-left: 0%;
 }*/
 
+audio {
+  display: none;
+}
+
 .gamenumber {
-  margin-top: 0px;
+  margin-top: 40px;
   margin-left: 0px;
   width: 150px;
+  height: 150px;
 
 }
 
@@ -59,84 +64,84 @@
 
 
 .green {
-  width: 150px;
-  font-size: 30px;
+  width: 100px;
+  font-size: 20px;
   font-weight: bold;
   color: lightgreen;
-  height: 150px;
-  border-radius: 75px;
+  height: 100px;
+  border-radius: 50px;
   border: 10px solid green;
   background-color: lightgreen;
 }
 
 .greenActive {
-  width: 150px;
-  height: 150px;
-  font-size: 30px;
+  width: 100px;
+  height: 100px;
+  font-size: 20px;
   font-weight: bold;
-  border-radius: 75px;
+  border-radius: 50px;
   background-color: green;
   color: green;
 }
 .red {
-  width: 150px;
-  font-size: 30px;
+  width: 100px;
+  font-size: 20px;
   font-weight: bold;
   color: pink;
-  height: 150px;
-  border-radius: 75px;
+  height: 100px;
+  border-radius: 50px;
   border: 10px solid red;
   background-color: pink;
 }
 
 .redActive {
-  width: 150px;
-  height: 150px;
-  font-size: 30px;
+  width: 100px;
+  height: 100px;
+  font-size: 20px;
   font-weight: bold;
-  border-radius: 75px;
+  border-radius: 50px;
   background-color: red;
   color: red;
 }
 
 .yellow {
-  width: 150px;
-  font-size: 30px;
+  width: 100px;
+  font-size: 20px;
   font-weight: bold;
   color: yellow;
-  height: 150px;
-  border-radius: 75px;
+  height: 100px;
+  border-radius: 50px;
   border: 10px solid goldenrod;
   background-color: yellow;
 }
 
 .yellowActive {
-  width: 150px;
-  font-size: 30px;
+  width: 100px;
+  font-size: 20px;
   font-weight: bold;
-  height: 150px;
-  border-radius: 75px;
+  height: 100px;
+  border-radius: 50px;
   background-color: yellow;
   color: yellow;
 }
 
 .blue {
-  width: 150px;
-  font-size: 30px;
+  width: 100px;
+  font-size: 20px;
   font-weight: bold;
   color: lightblue;
-  height: 150px;
-  border-radius: 75px;
+  height: 100px;
+  border-radius: 50px;
   border: 10px solid blue;
   background-color: lightblue;
 }
 
 .blueActive {
-  width: 150px;
-  font-size: 30px;
+  width: 100px;
+  font-size: 20px;
   font-weight: bold;
-  height: 150px;
-  border-radius: 75px;
+  height: 100px;
+  border-radius: 50px;
   background-color: blue;
   color: blue;
 }

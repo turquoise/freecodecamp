@@ -16,12 +16,14 @@ export class SimonsaysComponent implements OnInit {
   player = [];
   message = 'start game';
   strict = false;
-  level = 1;
   activeB = false;
   activeY = false;
   activeR = false;
   activeG = false;
-
+  redsound = false;
+  bluesound = false;
+  yellowsound = false;
+  greensound = false;
 
   // https://medium.com/front-end-hacking/create-simon-game-in-javascript-d53b474a7416
   // https://codepen.io/mrkaluzny/pen/pbVxxd
@@ -30,7 +32,6 @@ export class SimonsaysComponent implements OnInit {
 
   ngOnInit() {
     this.newGame();
-
   }
 
   newGame() {
@@ -41,7 +42,6 @@ export class SimonsaysComponent implements OnInit {
     this.currentGame = [];
     this.count = 0;
     this.addCount();
-
   }
 
   addCount() {
@@ -76,7 +76,6 @@ export class SimonsaysComponent implements OnInit {
       if (check) {
         if (this.count === 20) {
           this.message = 'You have won!';
-          this.level = 1;
         } else {
           this.message = 'Next round!';
           this.nextLevel();
@@ -86,32 +85,20 @@ export class SimonsaysComponent implements OnInit {
   }
 
   nextLevel() {
-    if (this.count < 5 ) {
-      this.level = 1;
-      this.addCount();
-    } else if (this.count > 5) {
-      this.level = 2;
-      this.addCount();
-    }
+    this.addCount();
+
   }
 
   generateMove() {
     let showColor = this.possibilities[ Math.floor(Math.random() * 4) ];
     this.currentGame.push(showColor);
-    if (showColor === 'Red') {
-      this.activeR = true;
-    } else if (showColor === 'Blue') {
-      this.activeB = true;
-    } else if (showColor === 'Green') {
-      this.activeG = true;
-    } else if (showColor === 'Yellow') {
-       this.activeY = true;
-    }
+
     console.log('this.currentGame ', this.currentGame);
     this.showMoves();
   }
 
   showMoves() {
+
     let i = 0;
     let moves = setInterval( () => {
       this.playGame(this.currentGame[i]);
@@ -120,29 +107,49 @@ export class SimonsaysComponent implements OnInit {
         clearInterval(moves);
       }
     }, 600);
-    //this.clearPlayer();
-  }
+    this.clearPlayer();
 
-  onSound(name) {
 
   }
+
+  // onSound(name) {
+  //   if (name === 'Green') {
+  //     this.greensound = true;
+  //   } else if (name === 'Blue') {
+  //     this.bluesound = true;
+  //   } else if (name === 'Red') {
+  //     this.redsound = true;
+  //   } else if (name === 'Yellow') {
+  //     this.yellowsound = true;
+  //   }
+  //
+  // }
 
   playGame(field) {
-    // add hover
-    // add sound
-    // display a field
-    if (field === 'Red') {
-      this.activeR = false;
-    } else if (field === 'Blue') {
-      this.activeB = false;
-    } else if (field === 'Green') {
-      this.activeG = false;
-    } else if (field === 'Yellow') {
+    if ( field === 'Red') {
+      this.activeR = true;
+      this.redsound = true;
+    } else if ( field === 'Blue') {
+      this.activeB = true;
+      this.bluesound = true;
+    } else if ( field === 'Green') {
+      this.activeG = true;
+      this.greensound = true;
+    } else if ( field === 'Yellow') {
+       this.activeY = true;
+       this.yellowsound = true;
+     }
+     setTimeout( () => {
+       this.activeR = false;
+       this.redsound = false;
+       this.activeB = false;
+       this.bluesound = false;
        this.activeY = false;
-    }
-
+       this.yellowsound = false;
+       this.activeG = false;
+       this.greensound = false;
+     }, 300);
     console.log('playGame field ', field);
-
   }
 
   onStrict() {
@@ -154,6 +161,7 @@ export class SimonsaysComponent implements OnInit {
   }
 
   clearPlayer() {
+
     this.player = [];
   }
 
