@@ -6,3 +6,19 @@ md-grid-tile {
 .example-card {
   width: 250px;
 }
+
+.row {
+  margin-left: 3%;
+}
+
+a {
+  color: black;
+}
+
+.spacer {
+  height: 20px;
+}
+
+image {
+  width: 200px;
+}

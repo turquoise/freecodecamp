@@ -5,13 +5,12 @@
     <h1>Pomodoro Clock</h1>
     <div id="timer">
       <div id="time">
-        <div>
+        <div id="align" >
           <span id="minutes">{{ minutesDom }}</span>
           <span id="colon">:</span>
           <span class="zero" *ngIf="numLessThanTen">0</span>
           <span id="seconds">{{ secondsDom }}</span>
         </div>
-
 
       </div>
       <div id="filler"></div>

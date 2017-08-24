@@ -1,129 +1,169 @@
 <div class="container-fluid top">
-  <div class="heading">
+  <div class="heading text-center">
     <h1>FreeCodeCamp Front End Development Projects</h1>
+    <p>The following Front End Development Projects were created in Angular 4 as part of the FreeCodeCamp Front End Development Certificate.</p>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <md-card class="example-card">
+      <md-card-header>
+        <!-- <div md-card-avatar class="example-header-image"></div> -->
+        <md-card-title>
+          <a routerLink="/quote">Quote</a>
+        </md-card-title>
+      </md-card-header>
+      <div class="spacer"></div>
+        <a routerLink="/quote"><img class="image" md-card-image src="../../assets/quote.PNG"></a>
+      <md-card-content>
+        <p>
+          A Quote page constructed using a basic Quote API and a random function.
+        </p>
+      </md-card-content>
+
+    </md-card>
+    </div>
+    <div class="col-4">
+      <md-card class="example-card">
+      <md-card-header>
+        <!-- <div md-card-avatar class="example-header-image"></div> -->
+        <md-card-title>
+          <a routerLink="/tribute">Tribute</a>
+        </md-card-title>
+      </md-card-header>
+      <div class="spacer"></div>
+        <a routerLink="/tribute"><img class="image" md-card-image src="../../assets/colortheory.PNG"></a>
+      <md-card-content>
+        <p>
+          This is a tribute to Johannes Itten, a Colour Theorist.  The data has been extracted from the Wikipedia API and relevant books have been extracted using the Google Books API.
+        </p>
+      </md-card-content>
+
+    </md-card>
+    </div>
+    <div class="col-4">
+      <md-card class="example-card">
+      <md-card-header>
+        <!-- <div md-card-avatar class="example-header-image"></div> -->
+        <md-card-title>
+          <a routerLink="/weather">Weather</a>
+        </md-card-title>
+      </md-card-header>
+      <div class="spacer"></div>
+        <a routerLink="/weather"><img class="image" md-card-image src="../../assets/weather.PNG"></a>
+      <md-card-content>
+        <p>
+          The Local Weather page was constructed using an Open Source API to access IP and longitude and latitude of the local machine.  The longitude and latitude data was then parsed into the Openweather API in order to access information about local weather.
+        </p>
+      </md-card-content>
+    </md-card>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="row">
+    <div class="col-4">
+      <md-card class="example-card">
+      <md-card-header>
+        <!-- <div md-card-avatar class="example-header-image"></div> -->
+        <md-card-title>
+          <a routerLink="/twitch">Twitch</a>
+        </md-card-title>
+      </md-card-header>
+      <div class="spacer"></div>
+        <a routerLink="/twitch"><img class="image" md-card-image src="../../assets/twitch.PNG"></a>
+      <md-card-content>
+        <p>
+          The Twitch page was constructed using the twitch API and a small selection of twitch users.  The page categorises users according to whether or not they are online and which game they are playing.
+        </p>
+      </md-card-content>
+    </md-card>
+    </div>
+    <div class="col-4">
+      <md-card class="example-card">
+      <md-card-header>
+        <!-- <div md-card-avatar class="example-header-image"></div> -->
+        <md-card-title>
+          <a routerLink="/wiki">Wikipedia</a>
+        </md-card-title>
+      </md-card-header>
+      <div class="spacer"></div>
+        <a routerLink="/wiki"><img class="image" md-card-image src="../../assets/wiki.PNG"></a>
+      <md-card-content>
+        <p>
+          The Wikipedia page demonstrates how the Wikipedia API can be used to search for a limited number of results.
+        </p>
+      </md-card-content>
+    </md-card>
+    </div>
+    <div class="col-4">
+      <md-card class="example-card">
+      <md-card-header>
+        <!-- <div md-card-avatar class="example-header-image"></div> -->
+        <md-card-title>
+          <a routerLink="/calculator">Calculator</a>
+        </md-card-title>
+      </md-card-header>
+      <div class="spacer"></div>
+        <a routerLink="/calculator"><img class="image" md-card-image src="../../assets/calc.PNG"></a>
+      <md-card-content>
+        <p>
+          The Calculator is an example of a basic implementation of a calculator.
+        </p>
+      </md-card-content>
+    </md-card>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="row">
+    <div class="col-4">
+      <md-card class="example-card">
+      <md-card-header>
+        <!-- <div md-card-avatar class="example-header-image"></div> -->
+        <md-card-title>
+          <a routerLink="/clock">Pomodoro Clock</a>
+        </md-card-title>
+      </md-card-header>
+      <div class="spacer"></div>
+        <a routerLink="/clock"><img class="image" md-card-image src="../../assets/clock.PNG"></a>
+      <md-card-content>
+        <p>
+          The Pomodoro Clock is a basic implementation of a timer enabling the user to set a 25 minute timer, take short and long breaks and stop the timer.
+        </p>
+      </md-card-content>
+    </md-card>
+    </div>
+    <div class="col-4">
+      <md-card class="example-card">
+      <md-card-header>
+        <!-- <div md-card-avatar class="example-header-image"></div> -->
+        <md-card-title>
+          <a routerLink="/tic-tac-toe">Tic Tac Toe</a>
+        </md-card-title>
+      </md-card-header>
+      <div class="spacer"></div>
+        <a routerLink="/tic-tac-toe"><img class="image" md-card-image src="../../assets/tictactoe.PNG"></a>
+      <md-card-content>
+        <p>
+          The Tic Tac Toe is a basic implementation of a Tic Tac Toe game allowing two players.  However, it does not yet have an AI implementation.
+        </p>
+      </md-card-content>
+    </md-card>
+    </div>
+    <div class="col-4">
+      <md-card class="example-card">
+      <md-card-header>
+        <!-- <div md-card-avatar class="example-header-image"></div> -->
+        <md-card-title>
+          <a routerLink="/simon-says">Simon Says</a>
+        </md-card-title>
+      </md-card-header>
+      <div class="spacer"></div>
+        <a routerLink="/simon-says"><img class="image" md-card-image src="../../assets/simonsays.PNG"></a>
+      <md-card-content>
+        <p>
+          The Simon Says game emulates a child's toy which flashes lights and you have to click on the lights in the correct order in order to win the game.
+        </p>
+      </md-card-content>
+    </md-card>
+    </div>
   </div>
 </div>
-
-  <md-grid-list cols="3" rowHeight="3:6">
-  <md-grid-tile>
-    <md-card class="example-card">
-    <md-card-header>
-      <!-- <div md-card-avatar class="example-header-image"></div> -->
-      <md-card-title>Project 1</md-card-title>
-      <md-card-subtitle>Project 1 subtitle</md-card-subtitle>
-    </md-card-header>
-    <img md-card-image src="http://lorempixel.com/200/200/abstract/1/">
-    <md-card-content>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue in ex ac dignissim. Donec vulputate mollis tempus. Morbi vestibulum quam lacinia, venenatis ipsum id, ornare urna.
-      </p>
-    </md-card-content>
-    <md-card-actions>
-      <!-- <button md-button>LIKE</button>
-      <button md-button>SHARE</button> -->
-      <div>Project Url</div>
-    </md-card-actions>
-  </md-card>
-  </md-grid-tile>
-
-  <md-grid-tile>
-    <md-card class="example-card">
-    <md-card-header>
-      <!-- <div md-card-avatar class="example-header-image"></div> -->
-      <md-card-title>Project 1</md-card-title>
-      <md-card-subtitle>Project 1 subtitle</md-card-subtitle>
-    </md-card-header>
-    <img md-card-image src="http://lorempixel.com/200/200/abstract/2/">
-    <md-card-content>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue in ex ac dignissim. Donec vulputate mollis tempus. Morbi vestibulum quam lacinia, venenatis ipsum id, ornare urna.
-      </p>
-    </md-card-content>
-    <md-card-actions>
-      <!-- <button md-button>LIKE</button>
-      <button md-button>SHARE</button> -->
-      <div>Project Url</div>
-    </md-card-actions>
-  </md-card>
-  </md-grid-tile>
-  <md-grid-tile>
-    <md-card class="example-card">
-    <md-card-header>
-      <!-- <div md-card-avatar class="example-header-image"></div> -->
-      <md-card-title>Project 1</md-card-title>
-      <md-card-subtitle>Project 1 subtitle</md-card-subtitle>
-    </md-card-header>
-    <img md-card-image src="http://lorempixel.com/200/200/abstract/3/">
-    <md-card-content>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue in ex ac dignissim. Donec vulputate mollis tempus. Morbi vestibulum quam lacinia, venenatis ipsum id, ornare urna.
-      </p>
-    </md-card-content>
-    <md-card-actions>
-      <!-- <button md-button>LIKE</button>
-      <button md-button>SHARE</button> -->
-      <div>Project Url</div>
-    </md-card-actions>
-  </md-card>
-  </md-grid-tile>
-  <md-grid-tile>
-    <md-card class="example-card">
-    <md-card-header>
-      <!-- <div md-card-avatar class="example-header-image"></div> -->
-      <md-card-title>Project 1</md-card-title>
-      <md-card-subtitle>Project 1 subtitle</md-card-subtitle>
-    </md-card-header>
-    <img md-card-image src="http://lorempixel.com/200/200/abstract/4/">
-    <md-card-content>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue in ex ac dignissim. Donec vulputate mollis tempus. Morbi vestibulum quam lacinia, venenatis ipsum id, ornare urna.
-      </p>
-    </md-card-content>
-    <md-card-actions>
-      <!-- <button md-button>LIKE</button>
-      <button md-button>SHARE</button> -->
-      <div>Project Url</div>
-    </md-card-actions>
-  </md-card>
-  </md-grid-tile>
-  <md-grid-tile>
-    <md-card class="example-card">
-    <md-card-header>
-      <!-- <div md-card-avatar class="example-header-image"></div> -->
-      <md-card-title>Project 1</md-card-title>
-      <md-card-subtitle>Project 1 subtitle</md-card-subtitle>
-    </md-card-header>
-    <img md-card-image src="http://lorempixel.com/200/200/abstract/5/">
-    <md-card-content>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue in ex ac dignissim. Donec vulputate mollis tempus. Morbi vestibulum quam lacinia, venenatis ipsum id, ornare urna.
-      </p>
-    </md-card-content>
-    <md-card-actions>
-      <!-- <button md-button>LIKE</button>
-      <button md-button>SHARE</button> -->
-      <div>Project Url</div>
-    </md-card-actions>
-  </md-card>
-  </md-grid-tile>
-  <md-grid-tile>
-    <md-card class="example-card">
-    <md-card-header>
-      <!-- <div md-card-avatar class="example-header-image"></div> -->
-      <md-card-title>Project 1</md-card-title>
-      <md-card-subtitle>Project 1 subtitle</md-card-subtitle>
-    </md-card-header>
-    <img md-card-image src="http://lorempixel.com/200/200/abstract/6/">
-    <md-card-content>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue in ex ac dignissim. Donec vulputate mollis tempus. Morbi vestibulum quam lacinia, venenatis ipsum id, ornare urna.
-      </p>
-    </md-card-content>
-    <md-card-actions>
-      <!-- <button md-button>LIKE</button>
-      <button md-button>SHARE</button> -->
-      <div>Project Url</div>
-    </md-card-actions>
-  </md-card>
-  </md-grid-tile>
-</md-grid-list>
