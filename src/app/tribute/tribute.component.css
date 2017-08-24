@@ -2,6 +2,26 @@
   background-image: url('');
   background-repeat: no-repeat;
   background-size: 100%;
-  background-color: lightblue;
+  background-color: white;
   height: 800px;
+}
+
+.image {
+  width: 450px;
+}
+
+.spacer {
+  height: 30px;
+}
+
+.thumb {
+  margin: 20px;
+}
+
+.books {
+  margin-bottom: 20px;
+}
+
+a {
+  color: #cb2927;
 }

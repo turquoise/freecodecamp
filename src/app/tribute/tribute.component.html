@@ -1,3 +1,52 @@
 <div class="container-fluid top">
-  <h1>Tribute</h1>
+  <h1 class="text-center">Colour Theory</h1>
+  <div class="spacer"></div>
+  <div class="row">
+    <div class="col-6">
+      <h6><a href="{{ wikiColorUrl}}" target="_blank">{{ wikiColorTitle }} from Wikipedia API</a></h6>
+      <p>{{ wikiColorDesc }}</p>
+
+      <h6><a href="{{ wikiUrl}}" target="_blank">{{ wikiName }} from Wikipedia API</a></h6>
+      <p>{{ wikiDesc }}</p>
+
+    </div>
+    <div class="col-6">
+      <img class="image" src="http://www.huevaluechroma.com/pics/0.2.2.jpg" >
+    </div>
+
+  </div>
+
+  <div class="spacer"></div>
+  
+  <div class="row">
+    <div class="col-6">
+      <div class="books">
+        <h5>Books by Johannes Itten from Google Books API</h5>
+      </div>
+      <h6>
+        Author: {{ book2Author }} - <a href="{{ book2Preview }}" target="_blank">{{ book2Title}}</a>
+      </h6>
+      <p>Published by: {{ book2Publisher}} - {{ book2PublishedDate }}</p>
+      <h6> {{ book2Subtitle }}</h6>
+      <table>
+        <tr>
+          <td><img class="thumb" src="{{ book2Img }}" ></td>
+          <td class="desc">{{ book2Desc }}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-6">
+      <div class="spacer"></div>
+      <h6>
+        Author: {{ book1Author }} - <a href="{{ book2Preview }}" target="_blank">{{ book1Title}}</a>
+      </h6>
+      <p>Published by: {{ book1Publisher}} - {{ book1PublishedDate }}</p>
+      <table>
+        <tr>
+          <td><img class="thumb" src="{{ book1Img }}" ></td>
+          <td class="desc">{{ book1Desc }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
