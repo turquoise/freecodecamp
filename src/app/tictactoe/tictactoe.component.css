@@ -13,12 +13,14 @@
 
 .block {
   /*margin-left: 25%;*/
+  background-image: url('https://image.freepik.com/free-vector/blackboard-dark-texture_1048-1028.jpg');
+  background-repeat: no-repeat;
   margin-right: auto;
   margin-left: auto;
-  width: 500px;
+  width: 400px;
   color: #e0f7fa;
   opacity: 0.9;
   background-color: #005662;
-  height: 600px;
+  height: 460px;
   border-radius: 40px;
 }
