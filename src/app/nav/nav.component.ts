@@ -30,17 +30,15 @@ import {
 })
 export class NavComponent implements OnInit {
 
-  // https://angularfirebase.com/lessons/bootstrap-4-collapsable-navbar-work-with-angular/
-  show: boolean = false;
+
+
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  toggleCollapse() {
-    this.show = !this.show
-  }
+  
 
 
 

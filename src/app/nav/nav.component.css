@@ -3,3 +3,26 @@
 /*nav {
   color: #37474f
 }*/
+
+span {
+
+  font-size: 16px;
+  margin-bottom: 20px;
+  vertical-align: top;
+
+}
+
+button {
+  outline: none;
+}
+a {
+  color: #cfd8dc;
+}
+
+a:hover {
+  color: #b0bec5;
+}
+
+.active {
+  color: #90a4ae;
+}

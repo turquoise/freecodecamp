@@ -9,8 +9,13 @@ import { AppRoutingModule } from './app-routing-module';
 import { CollapseModule } from 'ngx-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule, MdCardModule, MdSnackBarModule, MdToolbarModule } from '@angular/material';
-
+import {
+  MaterialModule,
+  MdCardModule,
+  MdSnackBarModule,
+  MdToolbarModule,
+  MdMenuModule
+} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -60,7 +65,8 @@ import { NavComponent } from './nav/nav.component';
     MaterialModule,
     MdCardModule,
     MdSnackBarModule,
-    MdToolbarModule
+    MdToolbarModule,
+    MdMenuModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]
