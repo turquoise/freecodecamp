@@ -9,6 +9,8 @@ import * as $ from 'jquery';
 })
 export class NavbarComponent implements OnInit {
 
+  // http://valor-software.com/ngx-bootstrap/#/collapse
+
   public isCollapsed: boolean = false;
 
   constructor() { }
@@ -23,6 +25,10 @@ export class NavbarComponent implements OnInit {
 
   public expanded(event: any): void {
     console.log('expanded event ', event);
+  }
+
+  onClick() {
+    this.isCollapsed = !this.isCollapsed;
   }
 
 }

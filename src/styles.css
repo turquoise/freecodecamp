@@ -2,8 +2,3 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~font-awesome/css/font-awesome.css";
-
-.top {
-  margin-top: 54px;
-
-}

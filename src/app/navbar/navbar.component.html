@@ -20,41 +20,68 @@
         id="navbarNavAltMarkup"
         (collapsed)="collapsed($event)"
         (expanded)="expanded($event)"
-        [collapse]="isCollapsed">
+        [collapse]="!isCollapsed">
     <div class="navbar-nav">
       <a class="nav-item nav-link active"
           routerLink="/home"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true}"
-          (click)="isCollapsed = !isCollapsed">
+          (click)="onClick()">
         Home
         <span class="sr-only">(current)</span>
       </a>
-      <a class="nav-item nav-link" routerLink="/quote" routerLinkActive="active" (click)="isCollapsed = !isCollapsed">
+      <a class="nav-item nav-link"
+          routerLink="/quote"
+          routerLinkActive="active"
+          (click)="onClick()">
         Quote
       </a>
-      <a class="nav-item nav-link" routerLink="/tribute" routerLinkActive="active" (click)="isCollapsed = !isCollapsed" >
+      <a class="nav-item nav-link"
+          routerLink="/tribute"
+          routerLinkActive="active"
+          (click)="onClick()" >
         Tribute
       </a>
-      <a class="nav-item nav-link" routerLink="/weather" routerLinkActive="active" (click)="isCollapsed = !isCollapsed" >
+      <a class="nav-item nav-link"
+          routerLink="/weather"
+          routerLinkActive="active"
+          (click)="onClick()" >
         Weather
       </a>
-      <a class="nav-item nav-link" routerLink="/twitch" routerLinkActive="active" (click)="isCollapsed = !isCollapsed" >
+      <a class="nav-item nav-link"
+          routerLink="/twitch"
+          routerLinkActive="active"
+          (click)="onClick()" >
         Twitch
       </a>
-      <a class="nav-item nav-link" routerLink="/wiki" routerLinkActive="active" (click)="isCollapsed = !isCollapsed" >
+      <a class="nav-item nav-link"
+          routerLink="/wiki"
+          routerLinkActive="active"
+          (click)="onClick()" >
         Wiki
       </a>
-      <a class="nav-item nav-link" routerLink="/calculator" routerLinkActive="active" (click)="isCollapsed = !isCollapsed" >
+      <a class="nav-item nav-link"
+          routerLink="/calculator"
+          routerLinkActive="active"
+          (click)="onClick()" >
         Calculator
       </a>
-      <a class="nav-item nav-link" routerLink="/pomodoro-clock" routerLinkActive="active" (click)="isCollapsed = !isCollapsed" >
+      <a class="nav-item nav-link"
+          routerLink="/pomodoro-clock"
+          routerLinkActive="active"
+          (click)="onClick()" >
         Clock
       </a>
-      <a class="nav-item nav-link" routerLink="/tic-tac-toe" routerLinkActive="active" (click)="isCollapsed = !isCollapsed" >
+      <a class="nav-item nav-link"
+          routerLink="/tic-tac-toe"
+          routerLinkActive="active"
+          (click)="onClick()" >
         Tic Tac Toe
       </a>
-      <a class="nav-item nav-link" routerLink="/simon-says" routerLinkActive="active" (click)="isCollapsed = !isCollapsed" >
+      <a class="nav-item nav-link"
+        routerLink="/simon-says"
+        routerLinkActive="active"
+        (click)="onClick()" >
         Simon Says
       </a>
     </div>

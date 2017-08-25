@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { CollapseModule } from 'ngx-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule, MdCardModule, MdSnackBarModule } from '@angular/material';
+import { MaterialModule, MdCardModule, MdSnackBarModule, MdToolbarModule } from '@angular/material';
 
 
 import { AppComponent } from './app.component';
@@ -26,6 +26,7 @@ import { BoardComponent } from './tictactoe/board/board.component';
 import { SquareComponent } from './tictactoe/square/square.component';
 import { PomodoroClockComponent } from './pomodoro-clock/pomodoro-clock.component';
 import { SimonsaysComponent } from './simonsays/simonsays.component';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { SimonsaysComponent } from './simonsays/simonsays.component';
     BoardComponent,
     SquareComponent,
     PomodoroClockComponent,
-    SimonsaysComponent
+    SimonsaysComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { SimonsaysComponent } from './simonsays/simonsays.component';
     CollapseModule,
     MaterialModule,
     MdCardModule,
-    MdSnackBarModule
+    MdSnackBarModule,
+    MdToolbarModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]
