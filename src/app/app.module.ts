@@ -6,6 +6,11 @@ import { HttpModule, JsonpModule, Jsonp, Response } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing-module';
 
+import {
+  CovalentLayoutModule,
+  CovalentStepsModule,
+  CovalentExpansionPanelModule
+} from '@covalent/core';
 import { CollapseModule } from 'ngx-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -64,7 +69,10 @@ import { NavComponent } from './nav/nav.component';
     MdCardModule,
     MdSnackBarModule,
     MdToolbarModule,
-    MdMenuModule
+    MdMenuModule,
+    CovalentLayoutModule,
+    CovalentStepsModule,
+    CovalentExpansionPanelModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 
-<md-toolbar style="min-height: 30px; max-height: 60px;"
+<!-- <md-toolbar style="min-height: 30px; max-height: 60px;"
             color="primary"
             class="md-toolbar-tools">
 
@@ -64,7 +64,12 @@
       fFlex fxShow="false" fxShow.gt-sm>
       <span class="nav" flex>Simon Says</span>
     </a>
+    <span class="space"
+          flex
+          fxHide="false"
+          fxHide.gt-sm>
 
+    </span>
 
     <button md-button
             fxFlex
@@ -73,17 +78,11 @@
             fxHide.gt-sm >
      <md-icon >menu</md-icon>
     </button>
-    <span class="space"
-          flex
-          fxHide="false"
-          fxHide.gt-sm>
 
-    </span>
 </md-toolbar>
 <md-menu xPosition="before"
           #menu="mdMenu"
-          [overlapTrigger]="false"
-          class="my-menu">
+          [overlapTrigger]="false">
     <span class="side" md-menu-item routerLink="/home" >
       Home
     </span>
@@ -115,4 +114,125 @@
       Simon Says
     </span>
 
-</md-menu>
+</md-menu> -->
+<td-expansion-panel disableRipple >
+  <ng-template td-expansion-panel-header>
+    <md-toolbar color="accent" class="toolbar">
+      <button md-button
+              fxFlex
+              fxHide="false"
+              fxHide.gt-sm
+              (click)="onClick()">
+       <md-icon >menu</md-icon>
+      </button>
+
+      <a class="nav-link"
+        routerLink="/home"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true}"
+        fFlex fxShow="false" fxShow.gt-sm>
+        <span class="nav" flex>Home</span>
+      </a>
+      <a class="nav-link"
+        routerLink="/quote"
+        routerLinkActive="active"
+        fFlex fxShow="false" fxShow.gt-sm>
+        <span class="nav" flex>Quote</span>
+      </a>
+      <a class="nav-link"
+        routerLink="/tribute"
+        routerLinkActive="active"
+        fFlex fxShow="false" fxShow.gt-sm>
+        <span class="nav" flex>Tribute</span>
+      </a>
+      <a class="nav-link"
+        routerLink="/wiki"
+        routerLinkActive="active"
+        fFlex fxShow="false" fxShow.gt-sm>
+        <span class="nav" flex>Wiki</span>
+      </a>
+      <a class="nav-link"
+        routerLink="/twitch"
+        routerLinkActive="active"
+        fFlex fxShow="false" fxShow.gt-sm>
+        <span class="nav" flex>Twitch</span>
+      </a>
+      <a class="nav-link"
+        routerLink="/weather"
+        routerLinkActive="active"
+        fFlex fxShow="false" fxShow.gt-sm>
+        <span class="nav" flex>Weather</span>
+      </a>
+      <a class="nav-link"
+        routerLink="/calculator"
+        routerLinkActive="active"
+        fFlex fxShow="false" fxShow.gt-sm>
+        <span class="nav" flex>Calculator</span>
+      </a>
+      <a class="nav-link"
+        routerLink="/pomodoro-clock"
+        routerLinkActive="active"
+        fFlex fxShow="false" fxShow.gt-sm>
+        <span class="nav" flex>Pomodoro Clock</span>
+      </a>
+      <a class="nav-link"
+        routerLink="/tic-tac-toe"
+        routerLinkActive="active"
+        fFlex fxShow="false" fxShow.gt-sm>
+        <span class="nav" flex>Tic Tac Toe</span>
+      </a>
+      <a class="nav-link"
+        routerLink="/simon-says"
+        routerLinkActive="active"
+        fFlex fxShow="false" fxShow.gt-sm>
+        <span class="nav" flex>Simon Says</span>
+      </a>
+    </md-toolbar>
+  </ng-template>
+  <md-list *ngIf="!disabled">
+    <md-list-item>
+
+        <h4 md-line>Home</h4>
+    </md-list-item>
+    <md-divider md-inset></md-divider>
+    <md-list-item>
+
+        <h4 md-line>Quote</h4>
+    </md-list-item>
+    <md-divider md-inset></md-divider>
+    <md-list-item>
+
+        <h4 md-line>Tribute</h4>
+    </md-list-item>
+    <md-divider md-inset></md-divider>
+    <md-list-item>
+
+        <h4 md-line>Wiki</h4>
+    </md-list-item>
+    <md-divider md-inset></md-divider>
+    <md-list-item>
+
+        <h4 md-line>Twitch</h4>
+    </md-list-item>
+    <md-divider md-inset></md-divider>
+    <md-list-item>
+
+        <h4 md-line>Calculator</h4>
+    </md-list-item>
+    <md-divider md-inset></md-divider>
+    <md-list-item>
+
+        <h4 md-line>Pomodoro Clock</h4>
+    </md-list-item>
+    <md-divider md-inset></md-divider>
+    <md-list-item>
+
+        <h4 md-line>Tic Tac Toe</h4>
+    </md-list-item>
+    <md-divider md-inset></md-divider>
+    <md-list-item>
+        
+        <h4 md-line>Simon Says</h4>
+    </md-list-item>
+  </md-list>
+</td-expansion-panel>

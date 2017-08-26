@@ -30,7 +30,7 @@ import {
 })
 export class NavComponent implements OnInit {
 
-
+disabled: boolean = true;
 
 
   constructor() { }
@@ -38,7 +38,11 @@ export class NavComponent implements OnInit {
   ngOnInit() {
   }
 
-  
+  onClick() {
+    this.disabled = !this.disabled;
+  }
+
+
 
 
 

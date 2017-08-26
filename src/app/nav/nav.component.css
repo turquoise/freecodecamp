@@ -1,10 +1,17 @@
 
-
+.icon {
+  margin: 20px;
+}
 /*nav {
   color: #37474f
 }*/
 md-menu {
 
+}
+
+.toolbar {
+  max-height: 50px;
+  background-color: #37474f;
 }
 
 .nav {
@@ -14,20 +21,19 @@ md-menu {
 }
 
 .space {
-  width: 90%;
+  width: 95%;
 }
 
-.my-menu {
-  background: skyblue;
-  color: white;
-}
+
 
 button {
   outline: none;
+  color: #cfd8dc;
 }
 
 a {
   color: #cfd8dc;
+  margin-top: 20px;
 }
 
 a:hover {
