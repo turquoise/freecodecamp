@@ -25,7 +25,6 @@ import { WeatherComponent } from './weather/weather.component';
 import { WikiComponent } from './wiki/wiki.component';
 import { TwitchComponent } from './twitch/twitch.component';
 import { CalculatorComponent } from './calculator/calculator.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { TictactoeComponent } from './tictactoe/tictactoe.component';
 import { BoardComponent } from './tictactoe/board/board.component';
 import { SquareComponent } from './tictactoe/square/square.component';
@@ -44,7 +43,6 @@ import { NavComponent } from './nav/nav.component';
     WikiComponent,
     TwitchComponent,
     CalculatorComponent,
-    NavbarComponent,
     TictactoeComponent,
     BoardComponent,
     SquareComponent,

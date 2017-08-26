@@ -8,68 +8,63 @@
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true}"
       fFlex fxShow="false" fxShow.gt-sm>
-      <span flex>Home</span>
+      <span class="nav" flex>Home</span>
     </a>
     <a class="nav-link"
       routerLink="/quote"
       routerLinkActive="active"
       fFlex fxShow="false" fxShow.gt-sm>
-      <span flex>Quote</span>
+      <span class="nav" flex>Quote</span>
     </a>
     <a class="nav-link"
       routerLink="/tribute"
       routerLinkActive="active"
       fFlex fxShow="false" fxShow.gt-sm>
-      <span flex>Tribute</span>
+      <span class="nav" flex>Tribute</span>
     </a>
     <a class="nav-link"
       routerLink="/wiki"
       routerLinkActive="active"
       fFlex fxShow="false" fxShow.gt-sm>
-      <span flex>Wiki</span>
+      <span class="nav" flex>Wiki</span>
     </a>
     <a class="nav-link"
       routerLink="/twitch"
       routerLinkActive="active"
       fFlex fxShow="false" fxShow.gt-sm>
-      <span flex>Twitch</span>
+      <span class="nav" flex>Twitch</span>
     </a>
     <a class="nav-link"
       routerLink="/weather"
       routerLinkActive="active"
       fFlex fxShow="false" fxShow.gt-sm>
-      <span flex>Weather</span>
+      <span class="nav" flex>Weather</span>
     </a>
     <a class="nav-link"
       routerLink="/calculator"
       routerLinkActive="active"
       fFlex fxShow="false" fxShow.gt-sm>
-      <span flex>Calculator</span>
+      <span class="nav" flex>Calculator</span>
     </a>
     <a class="nav-link"
       routerLink="/pomodoro-clock"
       routerLinkActive="active"
       fFlex fxShow="false" fxShow.gt-sm>
-      <span flex>Pomodoro Clock</span>
+      <span class="nav" flex>Pomodoro Clock</span>
     </a>
     <a class="nav-link"
       routerLink="/tic-tac-toe"
       routerLinkActive="active"
       fFlex fxShow="false" fxShow.gt-sm>
-      <span flex>Tic Tac Toe</span>
+      <span class="nav" flex>Tic Tac Toe</span>
     </a>
     <a class="nav-link"
       routerLink="/simon-says"
       routerLinkActive="active"
       fFlex fxShow="false" fxShow.gt-sm>
-      <span flex>Simon Says</span>
+      <span class="nav" flex>Simon Says</span>
     </a>
-    <span class="example-fill-remaining-space"
-          flex
-          fxHide="false"
-          fxHide.gt-sm>
 
-    </span>
 
     <button md-button
             fxFlex
@@ -78,38 +73,46 @@
             fxHide.gt-sm >
      <md-icon >menu</md-icon>
     </button>
+    <span class="space"
+          flex
+          fxHide="false"
+          fxHide.gt-sm>
+
+    </span>
 </md-toolbar>
-<md-menu x-position="before"
-          #menu="mdMenu">
-    <button md-menu-item routerLink="/home" >
+<md-menu xPosition="before"
+          #menu="mdMenu"
+          [overlapTrigger]="false"
+          class="my-menu">
+    <span class="side" md-menu-item routerLink="/home" >
       Home
-    </button>
-    <button md-menu-item routerLink="/quote" >
+    </span>
+    <span class="side" md-menu-item routerLink="/quote" >
       Quote
-    </button>
-    <button md-menu-item routerLink="/tribute" >
+    </span>
+    <span class="side" md-menu-item routerLink="/tribute" >
       Tribute
-    </button>
-    <button md-menu-item routerLink="/wiki" >
+    </span>
+    <span class="side" md-menu-item routerLink="/wiki" >
       Wiki
-    </button>
-    <button md-menu-item routerLink="/twitch" >
+    </span>
+    <span class="side" md-menu-item routerLink="/twitch" >
       Twitch
-    </button>
-    <button md-menu-item routerLink="/weather" >
+    </span>
+    <span class="side" md-menu-item routerLink="/weather" >
       Weather
-    </button>
-    <button md-menu-item routerLink="/calculator" >
+    </span>
+    <span class="side" md-menu-item routerLink="/calculator" >
       Calculator
-    </button>
-    <button md-menu-item routerLink="/pomodoro-clock" >
+    </span>
+    <span class="side" md-menu-item routerLink="/pomodoro-clock" >
       Pomodoro Clock
-    </button>
-    <button md-menu-item routerLink="/tic-tac-toe" >
+    </span>
+    <span class="side" md-menu-item routerLink="/tic-tac-toe" >
       Tic Tac Toe
-    </button>
-    <button md-menu-item routerLink="/simon-says" >
+    </span>
+    <span class="side" md-menu-item routerLink="/simon-says" >
       Simon Says
-    </button>
+    </span>
 
 </md-menu>
