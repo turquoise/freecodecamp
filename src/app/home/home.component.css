@@ -7,6 +7,12 @@ md-grid-tile {
   width: 250px;
 }
 
+.card {
+  width: 250px;
+  height: 450px;
+  vertical-align: top;
+}
+
 .row {
   margin-left: 3%;
 }
@@ -22,3 +28,9 @@ a {
 image {
   width: 200px;
 }
+
+/*md-grid-tile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}*/

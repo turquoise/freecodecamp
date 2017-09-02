@@ -19,7 +19,8 @@ import {
   MdCardModule,
   MdSnackBarModule,
   MdToolbarModule,
-  MdMenuModule
+  MdMenuModule,
+  MdGridListModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -72,7 +73,8 @@ import { NavComponent } from './nav/nav.component';
     MdMenuModule,
     CovalentLayoutModule,
     CovalentStepsModule,
-    CovalentExpansionPanelModule
+    CovalentExpansionPanelModule,
+    MdGridListModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]
