@@ -11,6 +11,7 @@ import 'rxjs/add/observable/of';
 export class HomeComponent implements OnInit {
 
   // http://brianflove.com/2017/05/03/responsive-angular/
+  // https://github.com/angular/flex-layout/wiki/ObservableMedia
   //public cols: number = 4;
   public cols: Observable<number>;
 

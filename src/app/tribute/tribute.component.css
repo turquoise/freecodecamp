@@ -8,7 +8,9 @@
 
 .image {
   width: 450px;
+
 }
+
 
 .spacer {
   height: 30px;
@@ -24,4 +26,23 @@
 
 a {
   color: #cb2927;
+}
+
+.card {
+  height: 300px;
+  width: 500px;
+  vertical-align: top;
+  border: 1px solid white;
+
+}
+
+.book {
+  height: 400px;
+  width: 500px;
+  vertical-align: top;
+  border: 1px solid white;
+  -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+
 }

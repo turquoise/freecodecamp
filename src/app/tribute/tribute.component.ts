@@ -1,4 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ObservableMedia } from '@angular/flex-layout';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 import { TributeService } from './tribute.service';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -9,6 +12,9 @@ import { Subscription } from 'rxjs/Subscription';
   providers: [TributeService]
 })
 export class TributeComponent implements OnInit, OnDestroy {
+
+  public cols: Observable<number>;
+  
 
   private googleBooksSubscription: Subscription;
   private wikiDataSubscription: Subscription;
@@ -49,13 +55,45 @@ export class TributeComponent implements OnInit, OnDestroy {
   image = '';
 
 
-  constructor(private tributeService: TributeService) { }
+  constructor(
+    private tributeService: TributeService,
+    private observableMedia: ObservableMedia
+  ) { }
 
   ngOnInit() {
     this.getGoogleBooks();
     this.getWikiData();
     this.getWikiSearch();
-    //this.getWikiExtract();
+    // set cols
+     if (this.observableMedia.isActive("xs")) {
+       this.cols = Observable.of(1);
+
+     } else if (this.observableMedia.isActive("sm")) {
+       this.cols = Observable.of(1);
+
+     } else if (this.observableMedia.isActive("md")) {
+       this.cols = Observable.of(2);
+
+     } else if (this.observableMedia.isActive("lg") || this.observableMedia.isActive("xl")) {
+       this.cols = Observable.of(2);
+
+     }
+
+     // observe changes
+     this.observableMedia.asObservable()
+     .subscribe(change => {
+       switch (change.mqAlias) {
+         case "xs":
+           return this.cols = Observable.of(1);
+         case "sm":
+           return this.cols = Observable.of(1);
+         case "md":
+           return this.cols = Observable.of(2);
+         case "lg":
+         case "xl":
+           return this.cols = Observable.of(2);
+       }
+     });
 
   }
 

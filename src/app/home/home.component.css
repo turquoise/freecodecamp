@@ -2,6 +2,10 @@ md-grid-tile {
   background: white;
 }
 
+.heading {
+  margin-left: 10%;
+}
+
 
 .example-card {
   width: 250px;
