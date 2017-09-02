@@ -7,7 +7,8 @@
 }
 
 .image {
-  width: 450px;
+  /*width: 450px;*/
+  max-width: 100%;
 
 }
 
@@ -29,7 +30,7 @@ a {
 }
 
 .card {
-  height: 300px;
+  /*height: 320px;*/
   width: 500px;
   vertical-align: top;
   border: 1px solid white;
@@ -37,7 +38,7 @@ a {
 }
 
 .book {
-  height: 400px;
+  /*height: 420px;*/
   width: 500px;
   vertical-align: top;
   border: 1px solid white;

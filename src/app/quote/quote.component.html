@@ -1,4 +1,4 @@
-<div class="container-fluid top text-center">
+<div class="container-fluid top text-center" ngClass.gt-xs="background">
   <!--<div
           style="font-style: italic"
           [style.xs]="{'font-size.px': 10, color: 'blue'}"
@@ -7,20 +7,53 @@
           [style.lg]="styleLgExp">
       Quote
   </div> -->
-  <div class="spacer" ></div>
+  <div class="space"></div>
+  <div class="container"
+      fxLayout="column"
+     fxLayoutAlign="center center">
+  <div class="frame">
   <div class="block">
-  <h1>Random Quote Generator</h1>
-  <!--<p>
-    <em>{{quote.line}}</em> - {{quote.author}}
-  </p> -->
-  <h2>{{ randomQuote?.author  }}</h2>
-  <hr>
-  <h3>{{ randomQuote?.quote  }}</h3>
-  <hr>
-  <button id="button" class="btn btn-default" (click)="onClick()">Random Quote</button>
-  <!-- <form>
-    <label>Search for a quote</label>
-    <input type="text" class="form-control">
-  </form> -->
+    <h1
+        [style.xs]="{'font-size.px': 20}"
+        [style.sm]="{'font-size.px': 20}"
+        [style.md]="{'font-size.px': 30}"
+        [style.lg]="{'font-size.px': 30}"
+        >
+      Random Quote Generator
+    </h1>
+    <!--<p>
+      <em>{{quote.line}}</em> - {{quote.author}}
+    </p> -->
+    <h2
+      [style.xs]="{'font-size.px': 20}"
+      [style.sm]="{'font-size.px': 20}"
+      [style.md]="{'font-size.px': 30}"
+      [style.lg]="{'font-size.px': 30}">
+      {{ randomQuote?.author  }}
+    </h2>
+    <hr>
+    <h3 [style.xs]="{'font-size.px': 20}"
+    [style.sm]="{'font-size.px': 20}"
+    [style.md]="{'font-size.px': 30}"
+    [style.lg]="{'font-size.px': 30}">
+      {{ randomQuote?.quote  }}
+    </h3>
+    <hr>
+    <button id="button"
+          class="btn btn-default"
+          (click)="onClick()"
+          [style.xs]="{'font-size.px': 10}"
+          [style.sm]="{'font-size.px': 10}"
+          [style.md]="{'font-size.px': 20}"
+          [style.lg]="{'font-size.px': 20}">
+      Random Quote
+    </button>
+    <!-- <form>
+      <label>Search for a quote</label>
+      <input type="text" class="form-control">
+    </form> -->
 </div>
+</div>
+</div>
+
 </div>

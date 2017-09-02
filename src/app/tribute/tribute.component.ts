@@ -14,7 +14,8 @@ import { Subscription } from 'rxjs/Subscription';
 export class TributeComponent implements OnInit, OnDestroy {
 
   public cols: Observable<number>;
-  
+
+
 
   private googleBooksSubscription: Subscription;
   private wikiDataSubscription: Subscription;
@@ -76,6 +77,7 @@ export class TributeComponent implements OnInit, OnDestroy {
 
      } else if (this.observableMedia.isActive("lg") || this.observableMedia.isActive("xl")) {
        this.cols = Observable.of(2);
+    
 
      }
 

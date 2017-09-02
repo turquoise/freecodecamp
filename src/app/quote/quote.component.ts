@@ -11,6 +11,10 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class QuoteComponent implements OnInit, OnDestroy {
 
+  // https://tburleson-layouts-demos.firebaseapp.com/#/responsive
+  // https://codepen.io/jaorsh/pen/OMRBmw
+  // https://github.com/angular/flex-layout/wiki/ngClass-API
+
   private quoteSubscription: Subscription;
 
   quote: Quote;
