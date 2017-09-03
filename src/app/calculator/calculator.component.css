@@ -1,9 +1,14 @@
+
+
 .container-fluid {
+  background-color:#b2bac5;
+  height: 800px;
+}
+
+.background {
   background-image: url('https://image.freepik.com/free-photo/wooden-surface-with-mobile-phone-and-green-leaf_23-2147608879.jpg');
   background-repeat: no-repeat;
-  /*background-attachment: fixed;*/
   background-size: 100%;
-  background-color: #b2bac5;
   height: 800px;
 }
 

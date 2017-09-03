@@ -1,12 +1,12 @@
 
 <body>
-  <div class='page container-fluid'>
+  <div class='page container-fluid' ngClass.gt-xs="background">
     <div class='spacer'></div>
     <div class='block text-center'>
-      <h1>Twitch TV JSON API</h1>
+      <h1 ngStyle.xs="font-size: 24px;">Twitch TV JSON API</h1>
       <a href='https://www.twitch.tv/freecodecamp' target='blank'>
-        <h3 >freeCodeCamp is
-          <span  >{{ freecodecamp }}</span>
+        <h3 ngStyle.xs="font-size: 24px;">freeCodeCamp is
+          <span  ngStyle.xs="font-size: 24px;">{{ freecodecamp }}</span>
         </h3>
       </a>
     </div>
@@ -15,13 +15,14 @@
 
     <div class='block'>
       <div class='row'>
-        <div class='col-md-4' id='user'>
+        <div class='col-md-4' id='user' ngStyle.xs="font-size: 24px;">
           User:<br>
           <ul>
             <li *ngFor="let list of twitchList">
               <a href="{{list.status === 'is ONLINE' ? list.url : '' }}"
                 [ngClass]="list.status === 'is ONLINE' ? 'online' : 'offline' "
-                target="_blank">
+                target="_blank"
+                ngStyle.xs="font-size: 20px;">
                 {{ list.user}}
               </a>
             </li>
@@ -29,26 +30,28 @@
 
 
         </div>
-        <div class='col-md-4' id='status'>
+        <div class='col-md-4' id='status' ngStyle.xs="font-size: 24px;">
           Status:<br>
           <ul>
             <li *ngFor="let list of twitchList">
               <a href="{{list.status === 'is ONLINE' ? list.url : '' }}"
                 [ngClass]="list.status === 'is ONLINE' ? 'online' : 'offline' "
-                target="_blank">
+                target="_blank"
+                ngStyle.xs="font-size: 20px;">
                 {{ list.status}}
               </a>
             </li>
           </ul>
 
         </div>
-        <div class='col-md-4' id='game'>
+        <div class='col-md-4' id='game' ngStyle.xs="font-size: 24px;">
           Game:<br>
           <ul>
             <li *ngFor="let list of twitchList">
               <a href="{{list.status === 'is ONLINE' ? list.url : '' }}"
                 [ngClass]="list.status === 'is ONLINE' ? 'online' : 'offline' "
-                target="_blank">
+                target="_blank"
+                ngStyle.xs="font-size: 20px;">
                 {{ list.game}}
               </a>
             </li>

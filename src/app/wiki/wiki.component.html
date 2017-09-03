@@ -1,12 +1,16 @@
-<div class="container-fluid top">
+<div class="container-fluid top" ngClass.gt-xs="background">
 
   <div class="spacer"></div>
   <div class="block text-center">
-    <h1>Wikipedia JSON API</h1>
-    <input #term  placeholder="Search Wikipedia">
-    <button class="btn btn-primary" (click)="search(term.value)">Submit</button>
-    <button class="btn btn-success">
-      <a href="{{ randomWikiUrl}}" target="_blank">
+    <h1 ngStyle.xs="font-size: 24px;">Wikipedia JSON API</h1>
+    <input #term  placeholder="Search Wikipedia" ngStyle.xs="font-size: 12px;">
+    <button class="btn btn-primary"
+            (click)="search(term.value)"
+            ngStyle.xs="font-size: 12px;">
+            Submit
+    </button>
+    <button class="btn btn-success" >
+      <a href="{{ randomWikiUrl}}" target="_blank" ngStyle.xs="font-size: 12px;" >
         Random Wikipedia Article
       </a>
     </button>
@@ -15,43 +19,14 @@
   <div class='spacer'></div>
     <a name="page1"></a>
     <div class='block'>
-      <h1 class='text-center'><span id='output'>Search Results</span></h1>
-      <!-- <ul>
-        <li *ngFor="let item of wikiList">
-          {{ item.title }} - {{ item.heading }} - {{ item.url }}
-        </li>
-      </ul> -->
+      <h1 class='text-center'><span id='output' ngStyle.xs="font-size: 24px;">Search Results</span></h1>
+
       <div *ngFor="let wiki of wikiList">
         <a href="{{ wiki.url }}" target="_blank">
-          <h4>{{ wiki.title }}</h4>
+          <h4 ngStyle.xs="font-size: 20px;">{{ wiki.title }}</h4>
         </a>
-        <p>{{ wiki.heading }}</p>
+        <p ngStyle.xs="font-size: 20px;">{{ wiki.heading }}</p>
         <br>
       </div>
 
     </div>
-
-    <!--<div class="row">
-      <div class="col ">
-        <ul >
-          <li class="card summary"  *ngFor="let sum of summary">{{ sum }}</li>
-        </ul>
-      </div>
-      <div class="col">
-        <ul >
-          <li class="card url" *ngFor="let u of url">
-            <a href="{{ u }}" target="_blank">
-            {{ u }}
-          </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <ul *ngFor="let sum of summary">
-      <li class="card" *ngFor="let u of url" >
-        {{ sum }} - <a href="{{ u }}" target="_blank">{{ u }}</a>
-      </li>
-    </ul>
-
-</div> -->

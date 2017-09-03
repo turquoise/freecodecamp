@@ -1,9 +1,21 @@
-.container-fluid {
+/*.container-fluid {
   background-image: url('https://www.seoclerk.com/pics/475017-1i21Tl1472557761.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   background-color:#030303;
   height: 3000px;
+}*/
+
+.container-fluid {
+  background-color:#1b1813;
+
+}
+
+.background {
+  background-image: url('https://www.seoclerk.com/pics/475017-1i21Tl1472557761.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100%;
 }
 
 .card {
