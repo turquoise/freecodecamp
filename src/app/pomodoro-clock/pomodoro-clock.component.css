@@ -1,9 +1,14 @@
+
+
 .container-fluid {
+  background-color:#624f40;
+  height: 1600px;
+}
+
+.background {
   background-image: url('https://www.amershamdesigns.co.uk/uploads/images/products/large/amershamdesigns_arte_artecarrelagewallcovering_1494253545615122XGC0.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
-  background-attachment: fixed;
-  background-color: #624f40;
   height: 800px;
 }
 
@@ -15,27 +20,30 @@ h1 {
   padding: 3%;
 }
 
-.block {
-  /*margin-left: 25%;*/
-  margin-right: auto;
-  margin-left: auto;
-  width: 500px;
-  color: darkbrown;
-  background-color: #624f40;
-  height: 600px;
-  border-radius: 40px;
-}
 
-#timer{
+
+.block {
+    background-color: #624f40;
+    opacity: .8;
+    color: darkbrown;
+    padding: 50px;
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 15px;
+    font-size: 1.5em;
+    padding-bottom: 2%;
+  }
+
+.timer{
   color: #907d6f;
   font-size:50px;
   font-weight: bold;
-  margin:5px auto;
+  margin:auto;
   border : 10px solid #907d6f;
   border-radius:50%;
   width: 300px;
   height: 300px;
-  /*overflow:hidden;*/
   position:relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -54,7 +62,7 @@ h1 {
   width: 15px;
 }
 
-#time{
+.time{
   margin-top: 90px;
   z-index : 1;
   position:relative;
@@ -66,7 +74,7 @@ h1 {
   color: #624f40;
 }
 
-#align {
+.align {
   text-align: left;
   margin-left: 60px;
 }

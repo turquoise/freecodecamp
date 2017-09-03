@@ -6,21 +6,20 @@
   <source *ngIf="greensound" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
-  
-<div class="block text-center">
-  <h1>Simon Says</h1>
+
+<div class="block text-center" ngStyle.xs="width: 300px;">
+  <h1 ngStyle.xs="font-size: 24px;">Simon Says</h1>
   <div class="spacer"></div>
   <div class="row">
     <div class="col-md-12">
       <div class="gamefield">
-        <!-- <div class="btn-sett" data-toggle="modal" data-target="#myModal">
-          <h5>Settings</h5>
-        </div> -->
+
         <div class="row top-row">
           <div [ngClass]="{ 'blueActive' : activeB, 'blue' : !activeB}"
               class="gamebutton"
-              (click)="addToPlayer('Blue')">
-            <p class="text" >{{ colorName[0] }}</p>
+              (click)="addToPlayer('Blue')"
+              ngStyle.xs="height: 70px; width: 70px; border-radius: 35px;">
+            <!--<p class="text" >{{ colorName[0] }}</p> -->
           </div>
         </div>
 
@@ -29,8 +28,9 @@ Your browser does not support the audio element.
             <div class="middle-left">
               <div [ngClass]="{ 'greenActive' : activeG, 'green' : !activeG}"
                   class="gamebutton"
-                  (click)="addToPlayer('Green')">
-                <p class="text">{{ colorName[1] }}</p>
+                  (click)="addToPlayer('Green')"
+                  ngStyle.xs="height: 70px; width: 70px; border-radius: 35px;">
+                <!--<p class="text">{{ colorName[1] }}</p>-->
               </div>
             </div>
           </div>
@@ -44,8 +44,9 @@ Your browser does not support the audio element.
             <div class="middle-right">
               <div [ngClass]="{'yellowActive' : activeY , 'yellow' : !activeY}"
                   class="gamebutton"
-                  (click)="addToPlayer('Yellow')">
-                <p class="text">{{ colorName[2] }}</p>
+                  (click)="addToPlayer('Yellow')"
+                  ngStyle.xs="height: 70px; width: 70px; border-radius: 35px;">
+                <!--<p class="text">{{ colorName[2] }}</p>-->
               </div>
             </div>
           </div>
@@ -54,10 +55,11 @@ Your browser does not support the audio element.
         <div class="row bottom-row">
           <div [ngClass]="{'redActive' : activeR, 'red' : !activeR}"
               class="gamebutton"
-              (click)="addToPlayer('Red')">
-            <p class="text" >{{ colorName[3] }}</p>
+              (click)="addToPlayer('Red')"
+              ngStyle.xs="height: 70px; width: 70px; border-radius: 35px;">
+            <!--<p class="text" >{{ colorName[3] }}</p>-->
           </div>
-          <!-- <div id="dark" class="gamebutton" (click)="addToPlayer('dark')"></div> -->
+
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 <div class="container-fluid top"
-    [ngClass]="{
+    [ngClass.gt-xs]="{
       'thunder' : thunder,
       'drizzle' : drizzle,
-      'rain' : rain, 
+      'rain' : rain,
       'snow' : snow,
       'fog' : fog,
       'clear' : clear,
@@ -11,30 +11,24 @@
 
 
   <div class="block text-center" >
-  <h1>Openweathermap JSON API</h1>
-    <p>Current Local Weather</p>
-    <ul>
-      <li>
-        <button class="btn btn-primary" (click)="onToggle()" >
-          <span>{{ celsius === false? 'Fahrenheight' : 'Celsius'}}</span>
-        </button>
-      </li>
-      <!--<li>
-        <img src="{{ iconUrl }}" >
-        {{ weatherData?.main?.temp }} F
-      </li> -->
-      <li >
-        <img src="{{ iconUrl }}" >
-        {{ celsius === false ? tempF : tempC }}
-        <span>{{ celsius === false ? ' F' : ' C'}}</span>
-      </li>
+  <h1 ngStyle.xs="font-size: 24px;">Open weather map JSON API</h1>
+    <p ngStyle.xs="font-size: 20px;">Current Local Weather</p>
+    <button class="btn btn-primary" (click)="onToggle()" >
+      <span ngStyle.xs="font-size: 14px;">{{ celsius === false? 'Fahrenheight' : 'Celsius'}}</span>
+    </button>
+    <p>
+      <img src="{{ iconUrl }}" >
+    </p>
+    <p>
+      <span ngStyle.xs="font-size: 16px;">{{ celsius === false ? tempF : tempC }}</span>
+      <span ngStyle.xs="font-size: 16px;">{{ celsius === false ? ' F' : ' C'}}</span>
+    </p>
+    <p ngStyle.xs="font-size: 16px;">{{ weatherData?.weather[0]?.description }}</p>
+    <p ngStyle.xs="font-size: 16px;">Country name: {{ country }}</p>
+    <p ngStyle.xs="font-size: 16px;">City: {{ weatherData?.name }}</p>
+    <p ngStyle.xs="font-size: 16px;">Latitude: {{ lat }}</p>
+    <p ngStyle.xs="font-size: 16px;">Longitude: {{ long }}</p>
 
-      <li>{{ weatherData?.weather[0]?.description }}</li>
-      <li>Country name: {{ country }}</li>
-      <li>City: {{ weatherData?.name }}</li>
-      <li>Latitude: {{ lat }}</li>
-      <li>Longitude: {{ long }}</li>
-    </ul>
   </div>
 
 

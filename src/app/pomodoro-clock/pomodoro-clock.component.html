@@ -1,15 +1,15 @@
-
-<div class="container-fluid">
+<div class="container-fluid" ngClass.gt-xs="background">
   <div class="spacer"></div>
-  <div class="block text-center">
-    <h1>Pomodoro Clock</h1>
-    <div id="timer">
-      <div id="time">
-        <div id="align" >
-          <span id="minutes">{{ minutesDom }}</span>
-          <span id="colon">:</span>
-          <span class="zero" *ngIf="numLessThanTen">0</span>
-          <span id="seconds">{{ secondsDom }}</span>
+  <div class=" container block text-center">
+    <h1 ngStyle.xs="font-size: 24px;">Pomodoro Clock</h1>
+    <div class="timer"
+        ngStyle.xs="border-radius:50%; width: 180px; height: 180px; border : 5px solid #907d6f;">
+      <div class="time" ngStyle.xs="margin-top: 20px; position: fixed;">
+        <div class="align" ngStyle.xs="margin-left: 50px;">
+          <span id="minutes" ngStyle.xs="font-size: 20px;">{{ minutesDom }}</span>
+          <span id="colon" ngStyle.xs="font-size: 20px;">:</span>
+          <span class="zero" *ngIf="numLessThanTen" ngStyle.xs="font-size: 20px; width: 1px;">0</span>
+          <span id="seconds" ngStyle.xs="font-size: 20px;">{{ secondsDom }}</span>
         </div>
 
       </div>
@@ -24,3 +24,36 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+<!--<div class="container-fluid" ngClass.gt-xs="background">
+  <div class="spacer"></div>
+  <div class="block text-center">
+    <h1 ngStyle.xs="font-size: 24px;">Pomodoro Clock</h1>
+    <div class="timer"
+        ngStyle.xs="border-radius:50%; width: 200px; height: 200px; margin-left: 0px;">
+      <div class="time" ngStyle.xs="margin-top: 20px; position: fixed;">
+        <div id="align" >
+          <span id="minutes" ngStyle.xs="font-size: 20px;">{{ minutesDom }}</span>
+          <span id="colon" ngStyle.xs="font-size: 20px;">:</span>
+          <span class="zero" *ngIf="numLessThanTen" ngStyle.xs="font-size: 20px; width: 1px;">0</span>
+          <span id="seconds" ngStyle.xs="font-size: 20px;">{{ secondsDom }}</span>
+        </div>
+
+      </div>
+      <div id="filler"></div>
+    </div>
+
+    <div id="buttons">
+      <button id="work" (click)="onStartWork()">Work</button>
+      <button id="shortBreak" (click)="onShortBreak()">Short Break</button>
+      <button id="longBreak" (click)="onLongBreak()">Long Break</button>
+      <button id="stop" (click)="onStopTimer()">Stop</button>
+    </div>
+  </div>
+</div> -->

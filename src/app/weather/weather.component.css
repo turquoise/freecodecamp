@@ -6,6 +6,7 @@
   height: 800px;
 }
 
+
 .thunder {
   background-image: url('http://i3.somersetlive.co.uk/incoming/article75204.ece/ALTERNATES/s1200/Thunder.jpg');
   background-repeat: no-repeat;
@@ -62,18 +63,18 @@
   height: 800px;
 }
 
-.block{
-    background-color:black;
-    opacity:.75;
-    color:white;
+.block {
+    background-color: black;
+    opacity: .8;
+    color: white;
     padding: 50px;
-    width:50%;
-    margin-right:auto;
-    margin-left:auto;
-    border-radius:15px;
-    font-size:1.5em;
-    padding-bottom:2%;
-}
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 15px;
+    font-size: 1.5em;
+    padding-bottom: 2%;
+  }
 
 i {
   font-size: 40px;
